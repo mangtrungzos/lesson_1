@@ -139,10 +139,28 @@
 
 ## Toán tử logic
 1. && - And
+> Toán tử And nó sẽ đọc từ vế trái qua vế phải
+> Nếu đọc từ trái qua mà không có giá trị nào nằm trong 6 giá trị trên thì sẽ tiếp tục đọc sang phải
+
 2. || - Or
+> Chỉ cần giá trị đầu khác 6 giá trị trên thì nó sẽ lấy luôn và bỏ qua các giá trị sau
+
+> Nếu giá trị đầu nằm trong 6 giá trị trên thì nó sẽ bỏ qua giá trị đó và lấy giá trị tiếp theo
+
 3. ! - Not
+
 
 > Note: 
 >> Với toán tử hoặc (||), nếu xuất hiện ít nhất 1 vế bằng true thì kết quả trả về sẽ là true.
 
 >> Còn với toán tử và (&&), nếu xuất hiện ít nhất 1 vế bằng false thì kết quả trả về sẽ là false.
+
+>> Câu lệnh điều kiện sử dụng toán tử so sánh thì trả về boolean 
+
+>> Toán tử logic sẽ không trả về boolean, mà nó sẽ trả về kết quả của 1 trong 2 vế tùy thuộc vào trường hợp xảy ra 
+
+# Function
+// Cách đặt tên hàm : a-z A-Z 0-9 _ $
+// Không được đặt số ở đầu tiên
+
+> Toán tử call () : dùng để gọi hàm 

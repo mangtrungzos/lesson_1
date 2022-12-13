@@ -63,32 +63,32 @@ console.log(fullName)
 */
 
         // Toán tử logic
-/*
-var a = 1;
-var b = 2;
-if(a > 0 && b > 0){
-    alert('dung');
-}
-*/
+
+// var a = 1;
+// var b = 2;
+// if(a > 0 && b > 0){
+//     alert('dung');
+// }
+
 
         // Practice Arithmetic
-/* 
+
 var a = 2;
 a++;
 
 console.log(a)
-*/
+
 
         // Practice Assignment
-// var a = 1;
+var a = 1;
 
-// a /= 2;
-// console.log(a);
+a /= 2;
+console.log(a);
 
 
 
         // Toán tử ++ -- / Prefix & Postfix
-// var a = 6;
+var a = 6;
 
 // Việc 1: + 1 cho a, a = a + 1 => a =7
 // Việc 2: Trả về a sau khi được + 1
@@ -97,72 +97,72 @@ console.log(a)
 // Việc 1: 'a copy', 'a copy' = 6
 // Việc 2: + 1 cho a, a = a + 1 => a = 7
 // Việc 3: trả về ' a copy' a = 6
-// var output = a++;
-// console.log('output:', output);
-// console.log('a:', a);
+var output = a++;
+console.log('output:', output);
+console.log('a:', a);
 
-// var number = 6;
+var number = 6;
 
-// var output = number++ + --number;
+var output = number++ + --number;
 
 // 6 + 6 
 // number++ trả về 6 sau khi tính xong thì number đã tăng lên 1 nên biến number ở TH: --number là 7 và giảm đi 1 tại thời điểm đó
 
-// console.log('output', output);
+console.log('output', output);
 
-// var output = ++number * 2 - number-- * 2;
+var output = ++number * 2 - number-- * 2;
 
 // // 7 * 2 - 7 * 2
 // // number lúc đầu là 7, number-- trả về biến copy => = 7 
 
-// console.log('output:', output);
+console.log('output:', output);
 
 
 
                 // Toán tử chuỗi - String operator
-// var firstName = 'sang'
-// var lastName = 'vu'
+var firstName = 'sang'
+var lastName = 'vu'
+
+console.log(firstName + ' ' + lastName);
 
 
-// console.log(firstName + ' ' + lastName);
+var name = 'sang'
 
+name = name + ' vu';
 
-// var name = 'sang'
-
-// name = name + ' vu';
-
-// console.log(name);
+console.log(name);
 
 
 
                 // Toán tử so sánh
-// var a = 1;
-// var b = 2;
+var a = 1;
+var b = 2;
 
-// if (a != b) {
-//         console.log('Dieu kien dung!');
-// } else{
-//         console.log('Dieu kien sai!');
-// }
+if (a != b) {
+        console.log('Dieu kien dung!');
+} else{
+        console.log('Dieu kien sai!');
+}
 
+/*------------------------------------------*/
 
-// var a = 'vu trong sang';
-// var b = 'vu trong sang';
+var a = 'vu trong sang';
+var b = 'vu trong sang';
 
-// if (a == b) {
-//         console.log('Dieu kien dung!');
-// } else{
-//         console.log('Dieu kien sai!');
-// }
+if (a == b) {
+        console.log('Dieu kien dung!');
+} else{
+        console.log('Dieu kien sai!');
+}
 
 
                 // Boolean
-// var a = 1;
-// var b = 2;
+var a = 1;
+var b = 2;
 
-// var isSuccess = a < b;
+var isSuccess = a < b;
 
-// console.log(isSuccess);
+console.log(isSuccess);
 
 
 /**
@@ -177,25 +177,25 @@ console.log(a)
  * NaN
  * null
  */
-// var fullName = '0';
+var fullName = '0';
 
-// if (fullName){
-//         console.log('Dieu kien dung!');
-// }  else{
-//         console.log('Dieu kien sai!');
-// }
+if (fullName){
+        console.log('Dieu kien dung!');
+}  else{
+        console.log('Dieu kien sai!');
+}
 
 
                 // Toán tử logic
-// var a = 1;
-// var b = 2;
-// var c = 3;
+var a = 1;
+var b = 2;
+var c = 3;
 
-// if(a > 0 && b < 0 && c > 0){
-//         console.log('Dieu kien dung!');
-// } else{
-//         console.log('Dieu kien sai!');
-// }
+if(a > 0 && b < 0 && c > 0){
+        console.log('Dieu kien dung!');
+} else{
+        console.log('Dieu kien sai!');
+}
 
                 // Data in Javascript
 // Number type
@@ -319,5 +319,24 @@ console.log(!!null) // false
 console.log(!!undefined) // false
 console.log(!!NaN) // false
 
+
+                // Toán tử logic 
+/* Câu lệnh điều kiện và phép so sánh */
+
+var a = 1;
+var b = 2;
+
+
+// var result = 'A' && 'B' && NaN && 'C';
+
+var result = 'A' || 'B' || 'C';
+console.log('result', result);
+
+
+// if (result){
+//         console.log(' Dieu kien dung');
+// } else{
+//         console.log('Dieu kien sai');
+// }
 
 
