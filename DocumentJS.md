@@ -81,6 +81,8 @@
  /=            x /= y         x = x / y
  **=           x **= y        x = x ** y
 
++= : nối thêm vào giá trị
+
 >> x++ tăng giá trị biến lên 1 và trả về giá trị trước khi tăng
 >> ++x tăng giá trị biến lên 1 và trả về giá trị sau khi tăng
 >> x-- giảm giá trị biến xuống 1 và trả về giá trị trước khi giảm
@@ -101,6 +103,9 @@
 
 > Luôn trả về 2 kết quả đúng hoặc sai
 > =, != : luôn chỉ quan tâm tới value của biến
+
+## Kiểm tra tính chất của từng giá trị
+- Dùng typeof
 --------------------------------------
 ## Toán tử so sánh - P2
 === : bằng
@@ -159,8 +164,56 @@
 
 >> Toán tử logic sẽ không trả về boolean, mà nó sẽ trả về kết quả của 1 trong 2 vế tùy thuộc vào trường hợp xảy ra 
 
+-----------------------------------------------------------------------------
 # Function
 // Cách đặt tên hàm : a-z A-Z 0-9 _ $
 // Không được đặt số ở đầu tiên
+// 1 function chỉ làm 1 việc
 
 > Toán tử call () : dùng để gọi hàm 
+
+## Tham số hàm - Javascript cơ bản
+1. Tham số
+    - Định nghĩa 
+    > Là 1 giá trị có thể truyền vào khi gọi tới 1 function / tham số được sử dụng trong 1 function để tính toán hoặc xử lý dữ liệu
+
+    - Kiểu dữ liệu
+    > Không giới hạn kiểu dữ liệu
+
+    - Tính private
+    > 1 biến được sử dụng làm tham số ở trong 1 function sẽ có tính private(riêng tư)
+    >> Ex: Chỉ sử dụng biến message ở trong cặp ngoặc nhọn của function này mà thôi
+            function writeLog(message) {
+                console.log(message);
+            }
+            writeLog('TEST);
+
+    - 1 tham số
+    > Ex: truyền vào 1 tham số 
+            writeLog('TESt);
+
+    - Nhiều tham số
+
+2. Truyền tham số
+    - 1 tham số
+    - Nhiều tham số
+
+3. Arguments
+    - Đối tượng argument
+    > Chỉ xuất hiện trong 1 function và nếu không ở trong function thì sẽ bị lỗi
+
+    - Giới thiệu vòng for
+
+
+
+// Tham số - Javascript cơ bản
+function writeLog(message){
+    console.log(message);
+}
+
+writeLog('text message');
+
+>> Khi gọi tới function đó và truyền 1 giá trị vào thì đó sẽ là đối số
+
+# Phương thức toString
+- Chuyển các giá trị về kiểu chuỗi (main_1.js)
