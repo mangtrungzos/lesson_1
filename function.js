@@ -65,3 +65,21 @@ function writeMessage () {
     console.log(myMessage);
 }
 writeMessage('Text 1', 'Text 2', 'Text 3')
+
+
+// Declaration function
+function showMessage(){
+    console.log('Declaration function');
+}
+
+// Expression function
+
+var showMessage2 = function(){
+    console.log('Expression function');
+}
+
+showMessage();
+showMessage2();
+
+// hosting : giúp cho Declaration function có thể gọi trước khi được định nghĩa
+

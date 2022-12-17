@@ -172,6 +172,15 @@
 
 > Toán tử call () : dùng để gọi hàm 
 
+# Các loại function
+1. Declaration function
+> Đối với Df thì phải đặt tên cho function thì khi đó mới được gọi là function
+
+2. Expression function
+> Sẽ được gán cho 1 biến
+
+3. Arrow function
+
 ## Tham số hàm - Javascript cơ bản
 1. Tham số
     - Định nghĩa 
@@ -217,3 +226,13 @@ writeLog('text message');
 
 # Phương thức toString
 - Chuyển các giá trị về kiểu chuỗi (main_1.js)
+
+# Một số điều cần biết về function (main_1.js)
+1. Khi function đặy trùng tên
+> Khi định nghĩa ra 2 function trùng tên thì function định nghĩa sau sẽ ghi đè lên function trước
+
+2. Khai báo biến trong hàm
+> 1 biến được định nghĩa trong 1 function thì phạm vi sử dụng chỉ trong function đó
+
+3. Định nghĩa hàm trong hàm
+> Phạm vi sử dụng trong function được định nghĩa - có tính chất private
