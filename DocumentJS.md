@@ -13,6 +13,7 @@
     6. Set interval : Chạy 1 đoạn code sau 1 khoảng thời gian và lặp đi lặp lại
 
 # Cú pháp Comments trong JS
+\\ lỗi về cú pháp : SyntaxError
 ## Mục đích sử dụng 
 - Ghi chú
 - Vô hiệu mã hóa : dùng comments
@@ -104,7 +105,7 @@
 > Luôn trả về 2 kết quả đúng hoặc sai
 > =, != : luôn chỉ quan tâm tới value của biến
 
-## Kiểm tra tính chất của từng giá trị
+## Kiểm tra kiểu dữ liệu của từng giá trị
 - Dùng typeof
 --------------------------------------
 ## Toán tử so sánh - P2
@@ -199,7 +200,7 @@
 
     - 1 tham số
     > Ex: truyền vào 1 tham số 
-            writeLog('TESt);
+            writeLog('TESt');
 
     - Nhiều tham số
 
@@ -215,7 +216,7 @@
 
 
 
-// Tham số - Javascript cơ bản
+\\ Tham số - Javascript cơ bản
 function writeLog(message){
     console.log(message);
 }
@@ -236,3 +237,50 @@ writeLog('text message');
 
 3. Định nghĩa hàm trong hàm
 > Phạm vi sử dụng trong function được định nghĩa - có tính chất private
+
+# CHUỖI TRONG JAVASCRIPT (main_1.js)
+1. Tạo chuỗi
+    - Cách tạo
+    - Dùng cách nào? Lý do
+    - Kiểm tra data type
+
+2. Một số case sử dụng backslash (\)
+   \\ Hai dấu gạch chéo ngược '\\' sẽ in ra 1 dấu \
+
+3. Xem độ dài chuỗi
+4. Chú ý độ dài khi viết code
+\\ 1 dòng code đối đa 80 ký tự 
+5. Template string ES6
+\\ `${....}`
+
+# LÀM VIỆC VỚI CHUỖI
+
+\\ Keyword : Javascript string methods
+> Tìm hiểu thêm về các phươn thức trong JS
+> Thứ tự của 1 chuỗi bắt đầu bằng 0 
+
+\\ 1. Length
+
+\\ 2. Find index
+> Tìm vị trí của kí tự trong 1 chuỗi
+> Trả về -1 là k tìm thấy
+> Phương thức search giúp tìm kiếm theo biểu thức chính quy
+
+\\ 3. Cut string
+> Cắt chuỗi slice
+> Cắt từ phải sang trái thì đếm ngược lại bắt đầu từ 0 -> -1,....
+
+\\ 4. Replace
+> Ghi đè
+
+\\ 5. Convert to upper case
+\\ 6. Convert to lower case
+\\ 7. Trim
+> Rất có ích trong việc xử lí dữ liệu nhập vào của người dùng
+> Giúp loại bỏ khoảng trắng thừa của chuỗi mà người dùng nhập vào
+
+\\ 8. Split
+> Cắt 1 chuỗi thành 1 array và chỉ cần tìm ra 1 điểm chung của chuỗi đó mà thôi
+
+\\ 9. Get a character by index
+> Lấy 1 kí tự bởi 1 cái index cho trước

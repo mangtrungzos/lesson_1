@@ -51,3 +51,139 @@ function showMessage(){
     showMessage2();
 }
 showMessage();
+
+
+        // CHUỖI TRONG JAVASCRIPT
+
+// 1. Tạo chuỗi
+// C1: nên sử dụng
+var fullName = 'welcome'
+// C2:
+var fullName = new String('welcome');
+// data type
+console.log(typeof fullName);
+
+// 2. backslash
+var fullName = 'Welcome to \'my channel\'';
+
+// 3. Cách check độ dài chuỗi 
+var fullName = "welcome to";
+console.log(fullName.length);
+
+// 4. Độ dài khi viết Code
+// Cách xuống dòng
+// C1: 
+var fullName = 
+"Một số case sử dụng backslash một số case sử dụng backslash";
+
+// C2: sử dụng toán tử nối chuỗi 
+var fullName = "Một số case sử dụng backslash" 
++ "1. Một số case sử dụng backslash";
+
+// 5. template string `...`
+
+var firstName = 'sang';
+var lastName = 'vu';
+console.log(`Toi la: ${firstName} ${lastName}`);
+
+
+
+        // LÀM VIỆC VỚI CHUỖI
+var myString = 'Hoc Js tai F8!';
+// var myString = 'Hoc Js tai Js Js F8!';
+
+// 1. Length
+    console.log(myString.length)
+    // Example:
+    function getContentLength(content) {
+        return content.length;
+    }
+    
+    // Mở tab Console để xem kết quả trực quan
+    console.log(getContentLength('JavaScript'));
+    console.log(getContentLength('Hello World'));
+
+
+// 2. Find index
+    // console.log(myString.indexOf('Js'));
+
+    // Tìm chuỗi Js thứ 2
+    console.log(myString.indexOf('Js', 6))
+
+    // Tìm chuỗi Js cuối cùng
+    console.log(myString.lastIndexOf('Js'))
+
+    // Tìm kiếm search
+    console.log(myString.search('Js'))
+
+// 3. Cut string
+    console.log(myString.slice(4, 6))
+
+    // Cắt từ đầu tới cuỗi 
+    console.log(myString.slice(0))
+
+    // Cắt từ phải sang trái
+    console.log(myString.slice(-3, -1))
+
+// 4. Replace
+
+    // Cách ghi đè tất cả chuỗi Js 
+    var myString1 = 'Hoc Js tai Js Js F8!';
+    console.log(myString1.replace(/Js/g, 'Javascript'))
+
+// 5. Convert to upper case
+    console.log(myString.toUpperCase())
+
+    // Example:
+    function getUpperCaseName(name) {
+        return name.toUpperCase();
+    }
+    
+    
+    // Expected results:
+    console.log(getUpperCaseName("Nguyen van a")) // "NGUYEN VAN A"
+    console.log(getUpperCaseName("nGuyen vAn C")) // "NGUYEN VAN C"
+
+
+// 6. Convert to lower case
+    console.log(myString.toLowerCase())
+
+// 7. Trim
+    // Giúp loại bỏ khoảng trằng thừa của chuỗi mà người dùng nhập vào
+    console.log(myString.trim())
+
+// 8. Split
+    var language = 'Javascript, PHP, Ruby';
+    console.log(language.split(', '))
+
+// --------------------------
+function reSult(mystr) {
+    return mystr.split(' ');
+}
+
+var cong = 'sang vu trong';
+console.log(reSult(cong))
+
+// -------------------------
+var coursesStr1 = 'HTML & CSS, JavaScript, ReactJS';
+
+function strToArray(coursesStr1){
+    return coursesStr1.split(',');
+}
+console.log(strToArray(coursesStr1))
+
+
+// Muốn cắt tất cả phần từ bên trong của chuỗi ta chỉ cần truyền vào 1 chuỗi rỗng
+console.log(language.split(''))
+
+// 9. Get a character by index
+    const myString2 = 'sang vu';
+
+// VD lấy chữ s 
+    console.log(myString2.charAt(0))
+    // Trả về chuỗi rỗng khi index không tồn tại
+
+// C2:
+    console.log(myString2[0])
+    // Trả về undefined khi index không tồn tại
+
