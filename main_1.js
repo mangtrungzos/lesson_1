@@ -187,3 +187,81 @@ console.log(language.split(''))
     console.log(myString2[0])
     // Trả về undefined khi index không tồn tại
 
+
+            // LÀM VIỆC VỚI SỐ
+// Kiểu só (number) in Javascript
+/*
+1. Tạo giá trị Number
+    - Cách tạo
+    - Dùng cách nào
+    - Kiểu tra data type
+
+2. Làm việc với Number
+    - To string
+    - To Fixed
+ */
+
+// C1
+var age = 18;
+
+// C2 : Tránh cách sử dụng từ khóa new (new sẽ khởi tạo 1 đối tượng)
+var otherNumber = new Number(9);
+
+// How to check NaN
+var result = 20 / 'abc';
+console.log(isNaN(result))
+
+// 2. To String
+var age = 20;
+var PI = 3.14;
+
+var myString = age.toString();
+
+console.log(myString)
+
+// 2. To Fixed
+
+console.log(PI.toFixed())
+
+// Cách rút gọn số thập phân
+var Numbers = 3000.2673986987;
+
+// Rút gọn còn 2 số thập phân
+console.log(Numbers.toFixed(2))
+
+
+// Cách kiểm tra giá trị đó có phải là số hay không
+function isNumber(value){
+    if(typeof value === 'number'){
+        return true;
+    } else {
+        return false;
+    }
+}
+// Expected results:
+console.log(isNumber(999)); // true
+console.log(isNumber('abc')); // false
+console.log(isNumber('100')); // false
+
+
+function isNumber(value){
+    if (typeof value === 'number' && !isNaN(value)) {
+        return true;
+    } else{
+        return false
+    }
+}
+
+
+
+
+// Expected results:
+console.log(isNumber(999)); // true
+console.log(isNumber('abc')); // false
+console.log(isNumber('100')); // false
+
+console.log(isNumber(NaN)); // false
+console.log(isNumber(100 / 'abc')); // false
+
+// var number = NaN;
+// console.log(isNaN(number))

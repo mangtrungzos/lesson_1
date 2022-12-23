@@ -49,8 +49,8 @@
 
 
 > 2. Kiểu dữ liệu phức tạp - Complex Data
-    - Function
-    - Object
+    - Function : f{}
+    - Object : {}
 
 >> Notes: 
 >>> Object Sử dụng để lưu hầu hết các giá trị trong Javascript
@@ -253,7 +253,7 @@ writeLog('text message');
 5. Template string ES6
 \\ `${....}`
 
-# LÀM VIỆC VỚI CHUỖI
+# LÀM VIỆC VỚI CHUỖI (main_1.js)
 
 \\ Keyword : Javascript string methods
 > Tìm hiểu thêm về các phươn thức trong JS
@@ -262,6 +262,7 @@ writeLog('text message');
 \\ 1. Length
 
 \\ 2. Find index
+> index: chỉ mục
 > Tìm vị trí của kí tự trong 1 chuỗi
 > Trả về -1 là k tìm thấy
 > Phương thức search giúp tìm kiếm theo biểu thức chính quy
@@ -284,3 +285,64 @@ writeLog('text message');
 
 \\ 9. Get a character by index
 > Lấy 1 kí tự bởi 1 cái index cho trước
+
+
+# Kiểu số number(main_1.js) / Keyword: Javascript Number Methods
+\\ NaN : Đại nhiên cho 1 kiểu số không hợp lệ
+> Cách kiểm tra 1 biến NaN : isNaN
+    Ex: 
+        var result = 20 / 'abc'
+        console.log(isNaN(result))
+\\ Khi console.log bên web thì sẽ là màu xanh đối với number / chuỗi sẽ màu đen
+
+\\ ToFixed
+> Với giá trị thập phân nhỏ hơn 5 thì làm tròn bằng chính số đó
+    var PI = 3.14;
+    console.log(PI.toiFixed())  -> 3
+> Với giá trị thập phân lớn hơn or bằng 5 thì làm tròn
+    var PI = 3.5;
+    console.log(PI.toFixed()) -> 4
+
+\\ Hàm Kiểm tra số
+    function isNumber(value){
+        if(typeof value === 'number'){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+# Mảng trong Javascript (main_2.js) / Keyword : Javascript array methods
+> Chứa được tất cả kiểu dữ liệu trong JS
+> typeof của 1 Array là 1 object
+> Cách kiểm tra có phải Array hay không: Array.isArray()
+## Làm việc với Array
+ 1. To string 
+ > chuyển kiểu dữ kiệu 'Array' sang 'String'
+ > Khi chuyển từ Array sang String thì mặc định có dấu phấy ngăn cách
+
+ 2. Join
+ > Chuyển từ mảng sang chuỗi nhưng có thể tự ghi dấu ngăn cách
+
+ 3. Pop
+ > Xóa đi phần tử cuối mảng và trả lại phần tử mà nó đã xóa
+ > Khi console.log thêm 1 lần nữa thì chỉ còn những phần tử còn lại in Array
+ 4. Push
+ > Thêm phần tử ở cuối mảng và chả về độ dài của mảng
+
+ 5. Shift
+ > Xóa đi 1 phần tử ở đầu mảng và trả lại phần tử đã xóa
+ > Khi xóa hết phần tử sẽ giá trị trả về sẽ là undefined
+
+ 6. Unshift
+ > Thêm 1 hoặc nhiều phần tử ở đầu mảng và trả về độ dài của mảng
+
+ 7. Splicing
+ > Xóa 1 elements bất kì trong Array
+
+ 8. Concat
+> Nối 2 Array với nhau
+
+ 9. Slicing 
+ > Sử dụng để cắt 1 vài elements của mảng
