@@ -2,6 +2,7 @@
 - var tên biến
 - Tên biến có phân biệt hoa và thường chữ và số
 - Viết code có dấu ';' có thể viết được trên cùng 1 dòng
+- variable: biến
 1. alert : tại 1 thời điểm thì chỉ hiển thị 1 biến mà thôi
 
 # Một số hàm built-in (built-in function)
@@ -53,6 +54,7 @@
     - Object : {}
 
 >> Notes: 
+>>> function(): để chạy 1 function sẽ phải sử dụng toán tử call()
 >>> Object Sử dụng để lưu hầu hết các giá trị trong Javascript
 >>> Object sử dụng để định nghĩa key
 >>> Khi cần định nghĩa 1 danh sách thì dung Array (Array cũng là 1 phần thuộc Object) 
@@ -346,3 +348,85 @@ writeLog('text message');
 
  9. Slicing 
  > Sử dụng để cắt 1 vài elements của mảng
+
+# Object(main_3.js)
+// Sử dụng trong việc lưu trữ thông tin của 1 đối tượng cụ thể
+
+>> Cách khai báo 
+    Ex: var myInfo = {key value ...};
+        var myInfo = {
+            'my-name': 'Sang vu',
+            age: 20,
+            addess: 'Ba Ria Vung Tau'
+        };
+
+> Cách thêm key & value sau khi Object được tạo
+    myInfo.email = 'sangv906@gmail.com';
+
+> Muốn đặt key vi phạm quy tắc đặt tên
+    myInfo.['my-email'] = 'sangv906@gmail.com';
+
+> Lấy value ra ngoài (Phải biết key)
+    console.log(myInfo.name);
+    console.log(myInfo['name']);
+
+> get a key by ariable (note: Don't use string)
+    var myKey = 'address';
+    console.log(myInfo[myKey]);
+
+> Add a new key by variable 
+    var emailKey = 'email';
+
+    var myInfo = {
+        name: '...',
+        age: ...,
+        [emailKey]: '0328trongsang@gmail.com'
+    }
+
+> Key là 1 function
+    var myInfo = {
+        name: 'sang vu',
+        age: 20,
+        [emailKey]: '0328trongsang@gmail.com',
+        getName: function() {
+            return this.name;
+        }
+    };
+>> this ở đây được hiểu là myInfo (Bởi khi có nhiều hàm như trên trong 1 object mà nếu sử dụng "myInfo" thay vì "this" thì khi sửa tên sẽ rắc rối)
+
+
+# Object
+\\ Muốn biến 1 biến thành 1 đối tượng thì thêm từ khóa 'new'
+# Object constructor (Xây dựng đối tượng) (OConstructor)\
+\\ Để cấu tạo nên 1 đối tượng cần : thuộc tính và phương thức
+\\ Khi các đối tượng được tạo ra từ 1 bản thiết kế thì nó đều có cấu trúc giống nhau
+\\ Object constructor là bản thiết kế của ngôi nhà
+>> Object constructor : thuộc tính phải được định nghĩa ở bên trong hàm tạo
+
+> Viết hoa chữ cái đầu của tên object constructor (quy ước chung)
+
+\\ String, Number, Array, Date là những Object constructor
+
+# Object prototype - Basic (Nguyên mẫu của Object - Nguyên mẫu để tạo nên 1 đối tượng)
+\\ Object prototype là nguyên liệu để tạo nên ngôi nhà
+\\ Object prototype giúp có thể thêm 1 thuộc tính ở bên ngoài
+> Tất cả attribute & method được thêm bằng Prototype qua 1 hàm tạo nằm trong proto & khi nằm trong proto thì đối tượng được tạo ra là user vẫn có thể sử dụng được dấu chấm 'user.className' để truy cập tới thuộc tính và phương thức đó
+> Tính chất của Prototype: thì sẽ thêm vào đối tượng được tạo ra
+EX: 
+    function User(){
+        ...
+    }
+    User.prototype.className = 'F8';
+    var user = new User('Sang', 'Vũ', 'Avatar');
+    var user2 = new User('Vũ', 'Sang', 'Avatar 2');
+
+    console.log(user.className);
+    console.log(user2.className);
+>> Two object (user, user2) đều được tạo ra từ Object constructor nên cả 2 đối tượng đều có thuộc tính className
+
+>> Có thể add attribute(thêm ở bên ngoài) sau khi hàm tạo được tạo ra
+
+
+# Đối tượng Date (Date.js)
+> Nguồn tài liệu: Javascript date object mozilla (developer.mozilla.org)
+\\ Sử dụng để làm việc với các giá trị thời gian trong Javascript

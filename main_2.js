@@ -44,11 +44,11 @@ Mảng trong JavaScript - Arry
  * Slicing
  */
 
-// var languages1 = [
-//     'Javascript',
-//     'PHP',
-//     'Ruby'
-// ];
+var languages1 = [
+    'Javascript',
+    'PHP',
+    'Ruby'
+];
 
 // To String
 // console.log(languages1.toString())
@@ -75,9 +75,9 @@ Mảng trong JavaScript - Arry
 
 // Splicing
 
-/// Xóa
-// languages1.splice(1, 2) // Đặt con trỏ ở vị trí thứ nhất và xóa đi 2 phần tử
-// console.log(languages1)
+// / Xóa
+languages1.splice(1, 2) // Đặt con trỏ ở vị trí thứ nhất và xóa đi 2 phần tử
+console.log(languages1)
 
 /// Chèn 
 // languages1.splice(1, 0, 'Dart', 'Java') 
@@ -102,3 +102,18 @@ var languages2 = [
 console.log(languages1.slice(1, 2)) // Cắt từ vị trí số 1 đến vị trí số 2
 /// Cắt nguyên mảng
 console.log(languages1.slice(0))
+/// Có thể truyền số âm để lấy phần tử cuối mảng
+console.log(languages1.slice(-2, -1)) // Lấy ở vị trí -2 và end ở -1
+
+
+// EX
+function getLastElement(array){
+    return array.slice(-1)
+}
+
+// Ví dụ sử dụng
+var animals = ['Monkey', 'Tiger', 'Elephant'];
+var result = getLastElement(animals);
+
+console.log(result); // Expected: "Elephant"
+console.log(animals);
