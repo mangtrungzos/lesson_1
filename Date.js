@@ -30,5 +30,4 @@ function getNextYear(year){
     var date = new Date();
     return year = date.getFullYear() + 1;
 }
-
 console.log(getNextYear(2023));
