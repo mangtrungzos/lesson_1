@@ -430,3 +430,19 @@ EX:
 # Đối tượng Date (Date.js)
 > Nguồn tài liệu: Javascript date object mozilla (developer.mozilla.org)
 \\ Sử dụng để làm việc với các giá trị thời gian trong Javascript
+
+
+# Math Object
+\\ Note: math Object is not Oject constructor
+\\ Được sử dụng để truy xuất những thuộc tính và phương thức qua dấu chấm '.'
+- Math.PI -> trả về số PI
+- Math.round() -> Làm tròn số thập phân (Tùy vào điểm đầu hay điểm cuối sẽ làm tròn trên or dưới)
+- Math.abs()  -> (Absolute) Trả về giá trị tuyệt đối / Có thể biến số âm thành số dương
+- Math.cell() -> Làm tròn trên
+- Math.floor() -> Làm tròn dưới
+- Math.random() -> Trả về 1 dãy số thập phân nhỏ hơn 1 / a number from 0 to <1
+>> Dùng để tạo ra 1 dãy số ngẫu nhiên cho 1 khoảng cho trước
+
+- Math.min()
+- Math.max()
+>> Tất cả số truyền vào min max đều ở dạng đối số
