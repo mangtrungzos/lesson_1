@@ -446,3 +446,8 @@ EX:
 - Math.min()
 - Math.max()
 >> Tất cả số truyền vào min max đều ở dạng đối số
+
+# Câu lệnh If else - Toán tử 3 ngôi (If/else - main.js)
+\\ Note: Chỉ cần 1 điều kiện đúng thì sẽ thực hiện câu lệnh trong điều kiện đó và bỏ qua các điều kiện còn lại.
+
+> Toán tử chia hết dùng : %
