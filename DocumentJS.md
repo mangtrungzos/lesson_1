@@ -447,7 +447,19 @@ EX:
 - Math.max()
 >> Tất cả số truyền vào min max đều ở dạng đối số
 
-# Câu lệnh If else - Toán tử 3 ngôi (If/else - main.js)
+# Câu lệnh rẽ nhánh If else - Toán tử 3 ngôi (If/else - main.js)
 \\ Note: Chỉ cần 1 điều kiện đúng thì sẽ thực hiện câu lệnh trong điều kiện đó và bỏ qua các điều kiện còn lại.
 
 > Toán tử chia hết dùng : %
+
+# Câu lệnh rẽ nhánh -  Switch
+\\ case: trường hợp
+
+\\ Truyền 1 giá trị cho switch: có thể là 1 biến, 1 chuỗi, 1 dạng số or 1 toán tử, 1 biểu thức điều kiện - sau đó switch sẽ tính toán để lấy ra giá trị mà đối tượng truyền vào 
+
+>> Note sử dụng break: tính từ case đúng nó sẽ lọt vào tất cả các case còn lại nến phải sử dụng case để thoát switch
+
+\\ Giá trị vượt quá khoảng 2 -> 8 ta sử dụng default
+\\ Ít hơn 3 case sử dụng if / else
+
+# Toán tử 3 ngôi
