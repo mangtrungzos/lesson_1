@@ -290,7 +290,7 @@ writeLog('text message');
 
 
 # Kiểu số number(main_1.js) / Keyword: Javascript Number Methods
-\\ NaN : Đại nhiên cho 1 kiểu số không hợp lệ
+\\ NaN : Đại dien cho 1 kiểu số không hợp lệ
 > Cách kiểm tra 1 biến NaN : isNaN
     Ex: 
         var result = 20 / 'abc'
@@ -304,7 +304,7 @@ writeLog('text message');
 > Với giá trị thập phân lớn hơn or bằng 5 thì làm tròn
     var PI = 3.5;
     console.log(PI.toFixed()) -> 4
-
+\\ typeof
 \\ Hàm Kiểm tra số
     function isNumber(value){
         if(typeof value === 'number'){
@@ -452,14 +452,24 @@ EX:
 
 > Toán tử chia hết dùng : %
 
-# Câu lệnh rẽ nhánh -  Switch
+# Câu lệnh rẽ nhánh -  Switch (If/else - main.js)
 \\ case: trường hợp
 
 \\ Truyền 1 giá trị cho switch: có thể là 1 biến, 1 chuỗi, 1 dạng số or 1 toán tử, 1 biểu thức điều kiện - sau đó switch sẽ tính toán để lấy ra giá trị mà đối tượng truyền vào 
 
->> Note sử dụng break: tính từ case đúng nó sẽ lọt vào tất cả các case còn lại nến phải sử dụng case để thoát switch
+>> Note sử dụng break: tính từ case đúng nó sẽ lọt vào tất cả các case còn lại nên phải sử dụng break để thoát switch
 
 \\ Giá trị vượt quá khoảng 2 -> 8 ta sử dụng default
 \\ Ít hơn 3 case sử dụng if / else
 
-# Toán tử 3 ngôi
+# Toán tử 3 ngôi (If/else - main.js)
+\\ ternary operator
+
+
+# Vòng lặp for - loop (main.js)
+
+\\ for/in - Lặp qua key của đối tượng
+> key: Có thể là array, string, object
+
+\\ for/of - Lặp qua value của đối tượng
+> Đối tượng: Có thể là array, string

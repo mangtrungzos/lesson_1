@@ -248,7 +248,7 @@ function isNumber(value){
     if (typeof value === 'number' && !isNaN(value)) {
         return true;
     } else{
-        return false
+        return false;
     }
 }
 
