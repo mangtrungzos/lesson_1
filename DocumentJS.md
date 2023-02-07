@@ -319,6 +319,7 @@ writeLog('text message');
 > Chứa được tất cả kiểu dữ liệu trong JS
 > typeof của 1 Array là 1 object
 > Cách kiểm tra có phải Array hay không: Array.isArray()
+> index trong mảng là vị trí của elements tự động tăng
 ## Làm việc với Array
  1. To string 
  > chuyển kiểu dữ kiệu 'Array' sang 'String'
@@ -473,3 +474,7 @@ EX:
 
 \\ for/of - Lặp qua value của đối tượng
 > Đối tượng: Có thể là array, string
+
+\\ 1 vòng lặp vô hạn làm cho trình duyệt bị treo
+\\ Ví dụ như điều kiện luôn luôn đúng thì nó vẫn sẽ tiếp tục chạy
+\\ Quên i++ sẽ gây treo trình duyệt
