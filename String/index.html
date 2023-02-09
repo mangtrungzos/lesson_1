@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:green;">
+        GeeksforGeeks
+     </h1>
+     <button onclick="geek()">
+         Press
+     </button>
+     <h4>
+        Clicking on the 'Press' button will return the
+        String Value.
+     </h4>
+     <p id="gfg"></p>
+     <script>
+        function geek() {
+         
+            var y = Date();
+            var string = String(y);
+         
+            document.getElementById("gfg").innerHTML = string;
+        }
+     </script>
+</body>
+</html>

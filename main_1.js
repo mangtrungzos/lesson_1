@@ -108,7 +108,7 @@ var myString = 'Hoc Js tai F8!';
     // console.log(myString.indexOf('Js'));
 
     // Tìm chuỗi Js thứ 2
-    console.log(myString.indexOf('Js', 6))
+    console.log(myString.indexOf('Js', 6)) // không tìm thấy = -1
 
     // Tìm chuỗi Js cuối cùng
     console.log(myString.lastIndexOf('Js'))

@@ -268,6 +268,7 @@ writeLog('text message');
 > Tìm vị trí của kí tự trong 1 chuỗi
 > Trả về -1 là k tìm thấy
 > Phương thức search giúp tìm kiếm theo biểu thức chính quy
+> indexOf : trả về vị trí xuất hiện đầu tiên của 1 giá trị trong chuỗi
 
 \\ 3. Cut string
 > Cắt chuỗi slice
@@ -315,6 +316,10 @@ writeLog('text message');
     }
 
 
+# Phương thức đẩy() của mảng trong Javascript / 
+> Dùng để thêm 1 or nhiều nhiều giá trị vào cuối mảng / Phương thức này thay đổi độ dài của mảng bằng số phần tử được thêm vào mảng.
+\\ Syntax: 
+    arr.push(element0, element1, ... , elementN)
 # Mảng trong Javascript (main_2.js) / Keyword : Javascript array methods
 > Chứa được tất cả kiểu dữ liệu trong JS
 > typeof của 1 Array là 1 object
@@ -470,7 +475,10 @@ EX:
 # Vòng lặp for - loop (main.js)
 
 \\ for/in - Lặp qua key của đối tượng
+> Sử dụng vòng lặp để lấy ra key của đối tượng
 > key: Có thể là array, string, object
+> key của array là số
+> key của đối tượng là chuỗi
 
 \\ for/of - Lặp qua value của đối tượng
 > Đối tượng: Có thể là array, string
@@ -478,3 +486,4 @@ EX:
 \\ 1 vòng lặp vô hạn làm cho trình duyệt bị treo
 \\ Ví dụ như điều kiện luôn luôn đúng thì nó vẫn sẽ tiếp tục chạy
 \\ Quên i++ sẽ gây treo trình duyệt
+
