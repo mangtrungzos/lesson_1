@@ -25,6 +25,13 @@ function getRandNumbers(min, max, length){
     return array;
 }
 
+// var a = getRandNumbers(1,2,10);
+// console.log(a);
+// khi chạy arry[i] = Math.random...vòng lặp này lặp i lần, ví dụ nó lặp 3 lần: lúc này i=0 1 2. 
+// khi i=0 thì arry[i] chuyển thành arry[0], mà arry[0] tức là ám chỉ phần tử đầu tiên của arry đó. 
+// Khi này thì phần tử đầu tiên được gán 1 số ngẫu nhiên bởi biểu thức arry[i] = Math.random... nó lặp 3 lần như vậy thì ta sẽ có 1 array gồm 3 số rồi
+
+
 
 
 // Example: Tính các phần tử 

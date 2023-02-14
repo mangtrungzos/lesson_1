@@ -480,10 +480,15 @@ EX:
 > key của array là số
 > key của đối tượng là chuỗi
 
-\\ for/of - Lặp qua value của đối tượng
+## For_Of(main.js)
+\\ for/of - Lặp qua value của đối tượng 
 > Đối tượng: Có thể là array, string
 
 \\ 1 vòng lặp vô hạn làm cho trình duyệt bị treo
 \\ Ví dụ như điều kiện luôn luôn đúng thì nó vẫn sẽ tiếp tục chạy
-\\ Quên i++ sẽ gây treo trình duyệt
+\\ Quên i++ sẽ gây treo trình duyệt (vong lap chay vo han)
 
+## While - do/while(main.js)
+> Điểm khác biệt của do/while với For/in/of
+\\ Kiểm tra điều kiện từ lần lặp thứ 2 trở đi
+\\ Lần đầu tiên lặp sẽ không cần kiểm tra điều kiện mà in ra giá trị ở trong do và sau đó từ lần thứ 2 trở đi mới xét điều kiện.
