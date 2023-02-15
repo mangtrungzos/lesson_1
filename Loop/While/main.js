@@ -49,7 +49,7 @@ do {
         isSuccess = true;
     }
     // Thất bại
-    // if (false){
+    // if (false){ // nếu false thì nó sẽ không lọt vào isSuccess = true
     //     isSuccess = true;
     // } 
     // Thất bại sẽ thực hiện lại 3 lần
@@ -58,3 +58,16 @@ do {
 
 // Nếu if là true thì thành công nên nó sẽ vô điều kiện và gán isS là true và xuống while !isS là false thoát
 // Nếu if là false bằng việc nạp thất bại nên không vô đc if xuống while !iSs là true && i <=3 nên tiếp tục vòng lại cho đến khi if thành công hoặc k thỏa điều kiện i <= 3 thì dừng.
+
+// Example: nạp thẻ
+var i = 0;
+var isSuccess = false;
+do {
+    i++
+    console.log('Nạp thẻ lần ' + i);
+    if (false){
+        isSuccess = true;
+    } else {
+        isSuccess = false;
+    }
+} while (!isSuccess && i <= 3); // !isSuccess (isSuccess = false)

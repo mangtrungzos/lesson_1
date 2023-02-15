@@ -105,6 +105,9 @@ console.log(languages1.slice(0))
 /// Có thể truyền số âm để lấy phần tử cuối mảng
 console.log(languages1.slice(-2, -1)) // Lấy ở vị trí -2 và end ở -1
 
+// Cắt chuỗi
+var txt = 'I can eat bananas all day';
+let x = txt.slice(10,17);// Đếm qua từng phần tử để cắt
 
 // EX
 function getLastElement(array){

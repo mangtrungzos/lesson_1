@@ -117,3 +117,7 @@ function getCanVoteMessage(age){
 // Kỳ vọng
 console.log(getCanVoteMessage(18)) // 'Bạn có thể bỏ phiếu'
 console.log(getCanVoteMessage(15)) // 'Bạn chưa được bỏ phiếu'
+
+var age = n;
+var voteable = age < 18 ? `Too young` : `Old enough`;
+alert(voteable);

@@ -123,14 +123,17 @@ var myInfo = {
 for (var key in myInfo) {
     // object có bao nhiêu key thì vòng for chạy bấy nhiêu 
     // Mỗi lần chạy thì sẽ gán giá trị key(name, age, address) dưới dạng chuỗi vào biến key 
-    console.log(myInfo[key]);
+    console.log(myInfo[key]); // lấy ra value của object
 }
 
 // Đối với Array / Lấy ra 
 var languages = ['javascript', 'reactJs', 'golang'];
 for (var key in languages){
+    // console.log(key);
     console.log(languages[key]);
 }
+// Key của Array là số / thì khi in ra sẽ là 0 1 2 (só thứ tự của value) 
+// Nên để lấy được value thì truyền key vào / Ta có thể hiểu như là languages[0] : value tại vị trí đầu tiên là Javascript  
 
 // Đối với chuỗi / Lấy ra nhiều chữ cái bằng cách sử dụng for in
 var myString = 'Javascript';

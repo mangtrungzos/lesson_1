@@ -325,6 +325,16 @@ writeLog('text message');
 > typeof của 1 Array là 1 object
 > Cách kiểm tra có phải Array hay không: Array.isArray()
 > index trong mảng là vị trí của elements tự động tăng
+
+\\ Cách lấy phần tử của mảng
+
+\\ Example: 
+    const cars = ["Saab", "Volvo", "BMW"];  
+    let x = cars[1]; -> Lấy ra Volve
+
+\\ Example: Lấy ra chiều dài của mảng
+    const cars ["Volvo", "Jeep", "Mercedes"];
+    alert(cars.length);
 ## Làm việc với Array
  1. To string 
  > chuyển kiểu dữ kiệu 'Array' sang 'String'
@@ -451,6 +461,7 @@ EX:
 
 - Math.min()
 - Math.max()
+- Math.sqrt() \\  Math method to get the square root
 >> Tất cả số truyền vào min max đều ở dạng đối số
 
 # Câu lệnh rẽ nhánh If else - Toán tử 3 ngôi (If/else - main.js)
@@ -481,7 +492,7 @@ EX:
 > key của đối tượng là chuỗi
 
 ## For_Of(main.js)
-\\ for/of - Lặp qua value của đối tượng 
+\\ for/of - Lặp qua value của từng đối tượng 
 > Đối tượng: Có thể là array, string
 
 \\ 1 vòng lặp vô hạn làm cho trình duyệt bị treo
@@ -492,3 +503,10 @@ EX:
 > Điểm khác biệt của do/while với For/in/of
 \\ Kiểm tra điều kiện từ lần lặp thứ 2 trở đi
 \\ Lần đầu tiên lặp sẽ không cần kiểm tra điều kiện mà in ra giá trị ở trong do và sau đó từ lần thứ 2 trở đi mới xét điều kiện.
+
+## Break & Continue in loop 
+> Có thể sử dụng trong tất cả các loại vòng lặp 
+> Break : muốn thoát khỏi vòng lặp
+> Continue : muốn bỏ qua 1 vài lần lặp của vòng lặp
+
+# Vòng lặp lồng nhau (Nested loop)

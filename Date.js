@@ -30,4 +30,11 @@ function getNextYear(year){
     var date = new Date();
     return year = date.getFullYear() + 1;
 }
-console.log(getNextYear(2023));
+console.log(getNextYear(2023)); 
+
+// Example: set the year of a date object to 2020
+
+const d = new Date();    
+d.setFullYear(2020);
+
+
