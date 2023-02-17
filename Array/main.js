@@ -120,3 +120,5 @@ var result = getLastElement(animals);
 
 console.log(result); // Expected: "Elephant"
 console.log(animals);
+
+

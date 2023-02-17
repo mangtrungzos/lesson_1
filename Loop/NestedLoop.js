@@ -18,9 +18,11 @@ for (var i = 0; i < myArray.length; i++){
 // Khi vòng lặp con thực thi xong thì nó sẽ ra ngoài vòng cha để tăng i lên 1
 
 for (var keyMyArray in myArray) {
+    // console.log(keyMyArray);
     // console.log(myArray[keyMyArray])
     for (var valueChildArray in myArray[keyMyArray]) {
       console.log(myArray[keyMyArray][valueChildArray]);
     }
 }
-// 
+// key của myArray lưu vào keyMyArray là số từ 0 1 2 nên muốn lấy ra value của key thì ta console myArray và truyền key vào
+

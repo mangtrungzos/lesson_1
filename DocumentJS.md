@@ -51,6 +51,7 @@
 
 > 2. Kiểu dữ liệu phức tạp - Complex Data
     - Function : f{}
+>> Hàm được được truyền vào dưới dạng tham số được hiểu là callback
     - Object : {}
 
 >> Notes: 
@@ -365,6 +366,26 @@ writeLog('text message');
  9. Slicing 
  > Sử dụng để cắt 1 vài elements của mảng
 
+## Các phương thức trong mảng
+> Array methods
+
+    forEach()
+>> Sử dụng để duyệt qua được phần tử của mảng
+    every()
+>> Áp dụng cho Exercise kiểm tra các phần tử thuộc mảng phải thỏa mãn 1 điều kiện nào đó
+>> Kết quả trả về: boolean giúp kiểm trả đúng sai
+    some()
+> Chỉ cần 1 phần tử trong mảng thuộc mãn điều kiện thì sẽ trả về true và ngừng lại vòng lặp / sự kiểm tra khi gặp kết quả đúng
+    find()
+> Tìm kiếm trong Array phần tử cần tìm, nếu có thì find method sẽ trả về đúng phần tử đó
+> Nếu không có => undefined
+    filter()
+> Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn
+> Khác find() ở điểm là sẽ tìm kiếm qua 1 dánh
+    map()
+    reduce()
+
+
 # Object(main_3.js)
 // Sử dụng trong việc lưu trữ thông tin của 1 đối tượng cụ thể
 
@@ -510,3 +531,9 @@ EX:
 > Continue : muốn bỏ qua 1 vài lần lặp của vòng lặp
 
 # Vòng lặp lồng nhau (Nested loop)
+
+# Đệ quy
+\\ Đặc tính của đối tượng Set là những element của nó là unique chỉ tồn tại 1 mà thôi
+> Lỗi trong đệ quy
+\\ Maximum call stack size exceeded
+> Cứ không phải điểm dừng là có logic handle
