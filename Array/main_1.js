@@ -126,6 +126,119 @@ console.log(getMostFavoriteSport(sports))
 // Output: [{ name: 'Bóng rổ, like: 6 }, { name: 'Bóng đá, like: 10 }]
 
 
+// map()
+var coursesList = [
+    {
+        id: 1,
+        name: 'Javascript',
+        coin: 0
+    },
+    {
+        id: 2,
+        name: 'HTML, CSS',
+        coin: 1
+    },
+    {
+        id: 3,
+        name: 'Ruby',
+        coin: 1
+    },
+    {
+        id: 4,
+        name: 'PHP',
+        coin: 200
+    },
+    {
+        id: 5,
+        name: 'ReactJS',
+        coin: 1
+    },
+    {
+        id: 6,
+        name: 'Ruby',
+        coin: 10
+    },
+    {
+        id: 7,
+        name: 'Ruby',
+        coin: 12
+    }
+
+];
+
+// Biến mong muốn nhận về 1 array có sự thay đổi ở name và có trường mới
+// map() method sẽ return lại 1 mảng mới / mảng mới sẽ có số lượng phần tử bằng với số lượng phần tử có giá trị của mảng cũ
+// Ở bên trong map(...) đang thực hiện 1 vòng lặp, lặp qua từng phần tử của mảng và mỗi khi lặp qua 1 phần tử sẽ gọi lại 1 function để nó thực thi tạo ra sự thay đổi
+// Lần thứ nhất chạy qua phần tử thứ nhất và trả về biến nhận được là 'course'
+// Và function thứ nhất return lại cái gì thì cái vị trí đầu tiên này sẽ nhận được cái đó
+function courseHandler(course, index){
+    // console.log(course);
+    return {
+        id: course.id,
+        name: `Khoa hoc: ${course.name}`,
+        coin: course.coin,
+        cointext: `Gia ${course.coin}`,
+        index: index,
+        originArray: coursesList, // originArray trả về array gốc
+    };
+}
+
+var newCourses = coursesList.map(courseHandler); // Truyền vào trong map 1 đối số là 1 function
+// newCourses trả về 1 arr
+console.log(newCourses);
+
+//Example: Tách ra 1 mảng mới và chỉ lấy tên của tất cả các khóa học
+// return {
+//     name: `Khoa hoc: ${course.name}`,
+// }
+
+/**------------------------------------------------------------------- */
+
+// Reduce() method 
+// Mong muốn nhận về tổng số coin
+// Biến lưu trữ
+// Thực hiện việc lưu trữ
+
+var i = 0;
+function coinHandler(accumulator, currentValue){ // accumulator: biến lưu trữ và giá trị khởi tạo sẽ được gán cho biến này
+    i++;
+    var total = accumulator + currentValue.coin;
+    // console.table({
+    //     'Lượt chạy:': i,
+    //     'Biến tích trữ:': accumulator,
+    //     'Giá khóa học:': currentValue.coin,
+    //     'Tích trữ được:': total
+    // });
+    return total; // Gọi là lưu trữ bởi vì nó giúp lưu trữ lại giá trị từ lần chạy đầu tiên cho tới lần cuối cùng
+} // Trong function này return cái gì thì sẽ lưu trữ cái đó
+
+// ở lần chạy thứ 1 biến tích trữ sẽ = 0 và return total lại = 1 / Sang lần chạy thứ 2 thì biến tích trữ luôn luôn bằng giá trị tích trữ được của lần trước đó
+// Khi đó accumulator lần chạy thứ 2 sẽ bằng 1
+var totalCoin = coursesList.reduce(coinHandler, 0); 
+
+// initial value : giá trị khởi tạo
+// khi reduce hoạt động sẽ gọi là sẽ gọi ngược lại coinHandler() và trả ngược lại vài tham số
+// currentValue: giá trị hiện tại/ mỗi khi reduce gọi lại function thì lúc đó đang ở 1 vị trí nào đó của phần tử ở trong arr
+// Ví dụ nằm ở phần tử số 2 thì sẽ lấy object số 2 trả về currentValue 
+
+console.log(totalCoin);
+
+
+/**---------------------------------------------------------------------- */
+var totalCoin = coursesList.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue.coin;
+}, 0); // initial value
+console.log(totalCoin);
+
+
+
+
+
+
+
+
+
+
 
 
 

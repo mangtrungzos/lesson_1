@@ -366,7 +366,7 @@ writeLog('text message');
  9. Slicing 
  > Sử dụng để cắt 1 vài elements của mảng
 
-## Các phương thức trong mảng
+## Các phương thức trong mảng (main_1.js)
 > Array methods
 
     forEach()
@@ -381,9 +381,13 @@ writeLog('text message');
 > Nếu không có => undefined
     filter()
 > Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn
-> Khác find() ở điểm là sẽ tìm kiếm qua 1 dánh
+> Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach
     map()
+> Sử dụng khi muốn chỉnh sửa hay thay đổi những elements của 1 array
+> originArray: trả về array gốc
     reduce()
+> Muốn nhận về 1 giá trị duy nhất sau khi tính toán, xử lý 1 Arr
+> Truyền vào 2 đối số: hàm trả về và giá trị khởi tạo / Tùy vào bài toán mà giá trị khởi tạo sẽ khác nhau
 
 
 # Object(main_3.js)
@@ -510,7 +514,7 @@ EX:
 > Sử dụng vòng lặp để lấy ra key của đối tượng
 > key: Có thể là array, string, object
 > key của array là số
-> key của đối tượng là chuỗi
+> key của object là chuỗi
 
 ## For_Of(main.js)
 \\ for/of - Lặp qua value của từng đối tượng 
