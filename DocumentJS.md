@@ -214,7 +214,7 @@
 3. Arguments
     - Đối tượng argument
     > Chỉ xuất hiện trong 1 function và nếu không ở trong function thì sẽ bị lỗi
-
+    > syntax: argument.length (kiểm tra xem có truyền đối số không)
     - Giới thiệu vòng for
 
 
@@ -321,7 +321,7 @@ writeLog('text message');
 > Dùng để thêm 1 or nhiều nhiều giá trị vào cuối mảng / Phương thức này thay đổi độ dài của mảng bằng số phần tử được thêm vào mảng.
 \\ Syntax: 
     arr.push(element0, element1, ... , elementN)
-# Mảng trong Javascript (main_2.js) / Keyword : Javascript array methods
+# Mảng trong Javascript (main.js) / Keyword : Javascript array methods
 > Chứa được tất cả kiểu dữ liệu trong JS
 > typeof của 1 Array là 1 object
 > Cách kiểm tra có phải Array hay không: Array.isArray()
@@ -388,7 +388,10 @@ writeLog('text message');
     reduce()
 > Muốn nhận về 1 giá trị duy nhất sau khi tính toán, xử lý 1 Arr
 > Truyền vào 2 đối số: hàm trả về và giá trị khởi tạo / Tùy vào bài toán mà giá trị khởi tạo sẽ khác nhau
+> Khi không có initial value thì sẽ lấy giá trị đầu tiên của mảng làm initial value / Sẽ giảm đi 1 lần chạy
+\\ Không phải bài toán nào cũng bỏ đi được initial value
 
+> Reduce nhận 2 đối số : 1. là callback(hàm gọi lại), 2. giá trị khởi tạo
 
 # Object(main_3.js)
 // Sử dụng trong việc lưu trữ thông tin của 1 đối tượng cụ thể

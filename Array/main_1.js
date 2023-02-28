@@ -198,7 +198,7 @@ console.log(newCourses);
 // Mong muốn nhận về tổng số coin
 // Biến lưu trữ
 // Thực hiện việc lưu trữ
-
+// currentValue: phần tử hiện tại
 var i = 0;
 function coinHandler(accumulator, currentValue){ // accumulator: biến lưu trữ và giá trị khởi tạo sẽ được gán cho biến này
     i++;
