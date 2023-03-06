@@ -544,3 +544,7 @@ EX:
 > Lỗi trong đệ quy
 \\ Maximum call stack size exceeded
 > Cứ không phải điểm dừng là có logic handle
+
+# Includes method
+> Đây là phương thức tồn tại săn trong prototype của 2 đối tượng: String, Array
+\\ Dối với chuỗi dùng kiểm tra xem trong chuỗi có chứa 1 từ gì đó không hoặc 1 cụm từ 

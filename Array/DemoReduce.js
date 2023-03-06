@@ -70,7 +70,7 @@ console.log(arrToObj(arr)); // { name: 'Sơn Đặng', age: 18 }
 //     return list.reduce((obj, item) => {
 //         obj[item[0]] = item[1];
 //         return obj;
-//     }, {});
+//     }, {}); 
 // }
 // Trong lần lặp đầu tiên, obj sẽ được gán giá trị khởi tạo là {} 
 // obj = {}
