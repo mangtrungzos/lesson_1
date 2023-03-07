@@ -19,7 +19,7 @@ var courses = [
     {
         id: 2,
         name: 'HTML, CSS',
-        coin: 1
+        coin: 0
     },
     {
         id: 3,
@@ -51,7 +51,7 @@ courses.forEach(function(course, index){
 
 // every()
 var isFree = courses.every(function(course, index){
-    console.log(index);
+    console.log(index); 
     return course.coin === 0; // Return rất quan trọng trong every()
 });
 
@@ -106,7 +106,7 @@ const sports = [
         name: 'Bóng đá',
         like: 10
     },
-]
+];
 function getMostFavoriteSport(sports){
     var sport = sports.filter(function(sported){
         return sported.like > 5;

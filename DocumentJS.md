@@ -375,7 +375,7 @@ writeLog('text message');
 >> Áp dụng cho Exercise kiểm tra các phần tử thuộc mảng phải thỏa mãn 1 điều kiện nào đó
 >> Kết quả trả về: boolean giúp kiểm trả đúng sai
     some()
-> Chỉ cần 1 phần tử trong mảng thuộc mãn điều kiện thì sẽ trả về true và ngừng lại vòng lặp / sự kiểm tra khi gặp kết quả đúng
+> Chỉ cần 1 phần tử trong mảng thoa mãn điều kiện thì sẽ trả về true và ngừng lại vòng lặp / sự kiểm tra khi gặp kết quả đúng
     find()
 > Tìm kiếm trong Array phần tử cần tìm, nếu có thì find method sẽ trả về đúng phần tử đó
 > Nếu không có => undefined
@@ -548,3 +548,8 @@ EX:
 # Includes method
 > Đây là phương thức tồn tại săn trong prototype của 2 đối tượng: String, Array
 \\ Dối với chuỗi dùng kiểm tra xem trong chuỗi có chứa 1 từ gì đó không hoặc 1 cụm từ 
+
+---------------------------------------------------------
+
+# Callback
+> Là hàm (function) được truyền qua đối số 
