@@ -370,6 +370,8 @@ writeLog('text message');
 > Array methods
 
     forEach()
+> forEach không có return
+> Khi xây dựng forEach dùng for in
 >> Sử dụng để duyệt qua được phần tử của mảng
     every()
 >> Áp dụng cho Exercise kiểm tra các phần tử thuộc mảng phải thỏa mãn 1 điều kiện nào đó
@@ -452,6 +454,7 @@ writeLog('text message');
 \\ String, Number, Array, Date là những Object constructor
 
 # Object prototype - Basic (Nguyên mẫu của Object - Nguyên mẫu để tạo nên 1 đối tượng)
+\\ Định nghĩa 1 phương thức cho 1 array constructor và khi array cons có những phương thức nào thì đối tượng được khởi tạo từ nó sẽ được thừa hưởng lại những phương thức này
 \\ Object prototype là nguyên liệu để tạo nên ngôi nhà
 \\ Object prototype giúp có thể thêm 1 thuộc tính ở bên ngoài
 > Tất cả attribute & method được thêm bằng Prototype qua 1 hàm tạo nằm trong proto & khi nằm trong proto thì đối tượng được tạo ra là user vẫn có thể sử dụng được dấu chấm 'user.className' để truy cập tới thuộc tính và phương thức đó
@@ -553,3 +556,5 @@ EX:
 
 # Callback
 > Là hàm (function) được truyền qua đối số 
+
+# Empty elements of array (Các phần tử rỗng của mảng)

@@ -44,8 +44,48 @@ Array.prototype.some2 = function(callback){
     for (var i = 0; i < arrayLength; i++){
         var result = callback(this[i], i)
     }
-return result;
+    return result;
 }
 var somes = courses.some2((course) => {
-return course.coin === 0;
+  return course.coin === 0;
 })
+
+// find 
+Array.prototype.find2 = function(cb){
+  var arrayLength = this.length;
+  for (var i = 0; i < arrayLength; i++){
+    var result = cb(this[i], i);
+  }
+  return result;
+}
+var courses= [
+  {
+    id: 1,
+    name: 'Javascript',
+    coin: 100
+  },
+  {
+    id: 2,
+    name: 'HTML, CSS',
+    coin: 200
+  },
+  {
+    id: 3,
+    name: 'Ruby',
+    coin: 220
+  },
+  {
+    id: 4,
+    name: 'PHP',
+    coin: 200
+  },
+  {
+    id: 5,
+    name: 'ReactJS',
+    coin: 480
+  }
+];
+var finds = courses.find2((course) => {
+  return course.coin > 200 && course.id > 1;
+})
+console.log(finds);
