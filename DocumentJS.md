@@ -374,15 +374,19 @@ writeLog('text message');
 > Khi xây dựng forEach dùng for in
 >> Sử dụng để duyệt qua được phần tử của mảng
     every()
+> Kiểm tra tất cả elements trong mảng / tất cả các elements phải thỏa mãn điều kiện đưa ra thì mới return true
+> Khi gặp 1 elements false thì sẽ dùng vòng lặp tại thời điểm đó
 >> Áp dụng cho Exercise kiểm tra các phần tử thuộc mảng phải thỏa mãn 1 điều kiện nào đó
 >> Kết quả trả về: boolean giúp kiểm trả đúng sai
     some()
+> Kiểm tra tối thiểu 1 phần tử trong mảng có thuộc điều kiện không
 > Chỉ cần 1 phần tử trong mảng thoa mãn điều kiện thì sẽ trả về true và ngừng lại vòng lặp / sự kiểm tra khi gặp kết quả đúng
     find()
 > Tìm kiếm trong Array phần tử cần tìm, nếu có thì find method sẽ trả về đúng phần tử đó
+> Sẽ trả về chính elements thỏa mãn điều kiện đầu tiên tìm được
 > Nếu không có => undefined
     filter()
-> Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn
+> Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn điều kiện
 > Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach
     map()
 > Sử dụng khi muốn chỉnh sửa hay thay đổi những elements của 1 array
@@ -558,3 +562,26 @@ EX:
 > Là hàm (function) được truyền qua đối số 
 
 # Empty elements of array (Các phần tử rỗng của mảng)
+
+--------------------------------------------------------
+
+# HTML DOM (Document Object Model) 
+> Quy chuẩn của W3C đưa ra
+> HTML DOM dựa trên Core DOM để define ra các tiêu chuẩn, thành phần cho trang web
+> Mô hình tài liệu được thể hiện dưới dạng đối tượng
+> Chuỗi html sẽ được trình duyệt đọc và tạo ra 1 mô hình từ chuỗi html
+
+1. Element: thẻ tag <> trong file html
+2. Attribute: Những thuộc tính nằm trong thẻ tag
+> VD: <h1 class="" id="" title=""></h1> 
+>> Thì class, id, title,... là thuộc tính
+3. Text
+
+\\ Node: Là những điểm giao nhau trên 1 sơ đồ  
+\\ Những điểm giao nhau, gồ lên có thể là elements, attribute, text => Đều có thể gọi là 1 node 
+
+\\ DOM chỉ là 1 WEB API
+
+## Document in DOM
+- Đại diện cho cả website 
+\\ Khi muốn truy cập đến Elements, Attribute, Text -> Đều thông qua Documents
