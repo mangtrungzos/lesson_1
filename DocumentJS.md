@@ -568,9 +568,11 @@ EX:
 # HTML DOM (Document Object Model) 
 > Quy chuẩn của W3C đưa ra
 > HTML DOM dựa trên Core DOM để define ra các tiêu chuẩn, thành phần cho trang web
-> Mô hình tài liệu được thể hiện dưới dạng đối tượng
+> Là Mô hình tài liệu được thể hiện dưới dạng đối tượng
 > Chuỗi html sẽ được trình duyệt đọc và tạo ra 1 mô hình từ chuỗi html
 
+
+> Có 3 thành phần
 1. Element: thẻ tag <> trong file html
 2. Attribute: Những thuộc tính nằm trong thẻ tag
 > VD: <h1 class="" id="" title=""></h1> 
@@ -585,3 +587,18 @@ EX:
 ## Document in DOM
 - Đại diện cho cả website 
 \\ Khi muốn truy cập đến Elements, Attribute, Text -> Đều thông qua Documents
+## những cách get elements
+> ID, class, tag, CSS selector, HTML collection
+\\ Khi select 1 elements mà trả về null là do viết sai heading id hoặc đặt trùng tên id -> nên các elements sau k lấy được -> return null
+
+> Muốn truy cập vào từng elements trong HTML collection phải dùng vòng lặp
+>> HTML collection tính chất giống mảng (khác ở chỗ không có các methods the same of array)
+
+> nodeList coi như array / dùng vòng lặp để lặp qua
+>> nodeList === HTML collection
+
+------------
+\\ Khi select form thì không cần phải selec qua ID
+> console.log(document.forms);
+
+\\ Những thẻ được quy vào HTML collection: a, image, forms,...
