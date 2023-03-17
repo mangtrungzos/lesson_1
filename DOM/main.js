@@ -41,12 +41,12 @@ var headingNodes = document.querySelector('.box .heading-2:nth-child(2)');
 // querySelectorAll return nodeList
 // console.log(headingNodes[1])
 
-// form 
+// <form></form> 
 console.log(document.forms['form-1']);
 
 console.log(document.forms.testForm); // Đặt tên JS testForms
 
-// a
+// <a></a>
 console.log(document.anchors); // Lấy ra tất cả thẻ a
 
 console.log(headingNodes);
@@ -54,4 +54,13 @@ console.log(headingNodes);
 // console.log({
 //     element: headingNode
 // });
+
+// Selector các phần tử con của 1 node đã có mà đã được lấy ra từ trước đó 
+var boxNode = document.querySelector('.box-1');
+
+console.log(boxNode);
+
+console.log(boxNode.querySelectorAll('li'));
+console.log(boxNode.getElementsByTagName('li'))
+
 

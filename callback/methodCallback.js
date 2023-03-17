@@ -7,7 +7,7 @@
 // Ôn lại
 // 1.Object prototype
 // 2. for in
-// 3. hasOwnProperty
+// 3. hasOwnProperty : check whether an object contains a key
 
 Array.prototype.forEach2 = function(callback){
     for (var index in this){ // for in k chỉ duyệt qua các elements trong mảng mà còn duyệt qua elements nằm trong proto
