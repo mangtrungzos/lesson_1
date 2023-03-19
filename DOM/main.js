@@ -30,7 +30,7 @@
 // getElementById()
 // getElementsByTagName()
 var headingNodes = document.getElementsByClassName('heading');
-var headingNodes = document.getElementsByTagName('p');
+var headingNodes = document.getElementsByTagName('p'); // Return HTML Collection
 
 // CSS selector
 var headingNodes = document.querySelector('.heading'); // return h1

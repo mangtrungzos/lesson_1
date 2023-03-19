@@ -587,6 +587,8 @@ EX:
 ## Document in DOM
 - Đại diện cho cả website 
 \\ Khi muốn truy cập đến Elements, Attribute, Text -> Đều thông qua Documents
+\\ Có 3 node chính : Element, Attribute, Text
+\\ Node Attribute, Text sẽ được lấy ra từ node element
 ## những cách get elements
 > ID, class, tag, CSS selector, HTML collection
 \\ Khi select 1 elements mà trả về null là do viết sai heading id hoặc đặt trùng tên id -> nên các elements sau k lấy được -> return null
@@ -602,3 +604,17 @@ EX:
 > console.log(document.forms);
 
 \\ Những thẻ được quy vào HTML collection: a, image, forms,...
+\\ Attribute nằm trong thẻ tag
+
+>> getElementById(): Trả về trực tiếp element
+>> querySelector(): Trả về trực tiếp element
+>> getElementsbyClassName()
+
+>> getElementsByTagName() : Không trả về trực tiếp element / Return HTML Collection
+>> querySelectorAll() : Không trả về trực tiếp element
+--------------------
+>Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
+
+## document.write
+- Ngay sau khi được thực thi thì sẽ in ra giá trị truyền vào
+- Nếu ghi sau khi DOM được tải xong thì lúc đó nó sẽ overwrite(ghi đè) lại tất cả nội dụng body
