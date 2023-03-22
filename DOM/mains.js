@@ -13,8 +13,54 @@
 
 // Node text
 
-// 1. Element node : Là h1
-// 2. Attribute node : Là id, class, title
-// 3. Text node : Là heading (Phần nội dung của h1)
 
-//<h1 id="heading" class="heading" title="heading">heading</h1>
+
+// DOM attributes
+
+var headingElement = document.querySelector('h1');
+
+headingElement.title = 'Title test'
+
+// 1. console.log(headingElement.title); / Attributes phải thuộc Element đó thì mới dùng cách này được
+
+// 2.
+// Set Attributes in a Element
+headingElement.setAttribute('d', 'heading');
+
+// Get value of attributes
+console.log(headingElement.getAttribute('class'));
+
+// Get Attributes added by JS
+console.log(headingElement.getAttribute('title'));
+
+console.log(headingElement.getAttribute('d'));
+
+var headingElements = document.querySelector('h2');
+
+headingElements.setAttribute('style', 'color: blue');
+
+
+// Text Node
+
+// innerText, textContent
+
+// geter
+// seter : change content of an Attributes of an object
+
+var headingElement1 = document.querySelector('h1'); // headingElement1 is an object
+
+console.log(headingElement1.innerText); // This is a geter
+console.log(headingElement1.textContent); // This is a geter
+
+headingElement1.innerText = 'New heading';  // This is a seter
+// textContent the same
+
+// Sự thay đổi này được tạo ra khi Js được thực thi
+
+headingElement1.textContent = '<i>New heading</i>';
+
+headingElement1.textContent = `
+
+New heading
+
+`

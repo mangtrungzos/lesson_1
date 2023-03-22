@@ -605,6 +605,7 @@ EX:
 
 \\ Những thẻ được quy vào HTML collection: a, image, forms,...
 \\ Attribute nằm trong thẻ tag
+\\ Trong DOM 1 thẻ tag là 1 element
 
 >> getElementById(): Trả về trực tiếp element
 >> querySelector(): Trả về trực tiếp element
@@ -618,3 +619,35 @@ EX:
 ## document.write
 - Ngay sau khi được thực thi thì sẽ in ra giá trị truyền vào
 - Nếu ghi sau khi DOM được tải xong thì lúc đó nó sẽ overwrite(ghi đè) lại tất cả nội dụng body
+
+## Note
+// 1. Element node : Là h1
+// 2. Attribute node : Là id, class, title
+// 3. Text node : Là heading (Phần nội dung của h1)
+
+//<h1 id="heading" class="heading" title="heading">heading</h1>
+
+## DOM attributes (mains.js)
+\\ Có 2 cách để truy xuất vào attributes:
+> 1. Truy xuất trực tiếp qua thuộc tính
+> 2. Truy xuất qua phương thức / Truyền đối số cho hàm
+
+\\ Thêm thuộc tính vào thẻ tag
+
+var headingElement = document.querySelector('h1');
+
+\\ headingElement.title = 'heading'; \\ add title = 'heading' in h1
+
+\\ headingElement.className = 'heading'
+
+> Attributes được thêm vào ở HTML hay được thêm vào bởi JS thì đều vào đối tượng DOM / Nếu ELement tồn tại trong DOM rồi, lúc đó đều get được Attributes ra
+
+## Text node (mains.js)
+\\ innerText, textContent
+> innerText là thuộc tính của element node
+> textContext là tồn tại trên cả element node & text node
+
+\\ textContent: Lấy nội dung thực sự nằm trong text node | Cả đoạn mã JS
+\\ innerText: Chỉ hiện thị những gì nhìn thấy trên giao diện web
+
+> Khi nằm trong DOM nó đã là 1 thẻ tag thì nó vẫn chỉ là 1 element node và nó đã là nội dung text nằm trong thẻ tag thì sẽ luôn là 1 text node
