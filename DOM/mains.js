@@ -14,7 +14,7 @@
 // Node text
 
 
-
+/*-----------------------------------------*/
 // DOM attributes
 
 var headingElement = document.querySelector('h1');
@@ -40,6 +40,7 @@ var headingElements = document.querySelector('h2');
 headingElements.setAttribute('style', 'color: blue');
 
 
+/*--------------------------------------------------*/
 // Text Node
 
 // innerText, textContent
@@ -63,4 +64,24 @@ headingElement1.textContent = `
 
 New heading
 
-`
+`;
+
+
+/*--------------------------------------------------*/
+// innerHTML | outerHTML
+
+var boxElement = document.querySelector('.box')
+
+// innerHTML
+boxElement.innerHTML = '<h1 title="heading">boxHeading</h1>'; // seter
+
+console.log(document.querySelector('h1').innerText);
+console.log(boxElement.innerHTML); // geter
+
+// outerHTML
+boxElement.outerHTML = '<span>Test</span>'; // Ghi đè thẻ box
+
+console.log(boxElement); // return thẻ box | vẫn còn là do còn trong bộ nhớ | do get ra từ querySelector
+// Trong DOM thật không còn nữa
+
+/*---------------------*/

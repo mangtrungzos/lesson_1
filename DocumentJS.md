@@ -651,3 +651,25 @@ var headingElement = document.querySelector('h1');
 \\ innerText: Chỉ hiện thị những gì nhìn thấy trên giao diện web
 
 > Khi nằm trong DOM nó đã là 1 thẻ tag thì nó vẫn chỉ là 1 element node và nó đã là nội dung text nằm trong thẻ tag thì sẽ luôn là 1 text node
+
+## innerHTML | outerHTML
+- Cách thêm 1 element vào 1 element
+- Hai thuộc tính của element node
+
+\\ innerHTML
+- Thêm trực tiếp vào dưới dạng là một Element node
+> Add an Element to an Element | an text node to an Element | an attribute to an ELement 
+    
+    boxElement.innerHTML = '<h1>boxHeading</h1>';
+    \\ Nếu bỏ thẻ tag đi thì nó chỉ hiểu đây là text node
+
+> Sử dụng dưới dạng geter / Lấy nội dụng HTML bên trong element của chúng ta ra / Lấy ra và quy thành dạng chuỗi
+
+    console.log(boxElement.innerHTML); // geter
+
+\\ outerHTML
+- Ghi đè Element
+> Return tag box | vẫn còn là do còn trong bộ nhớ | do get ra từ querySelector | Trong DOM thật không còn nữa
+    boxElement.outerHTML = '<span>Test</span>'; // Ghi đè thẻ box
+
+    console.log(boxElement) // <div class="box"></div> | Do vẫn còn trong bộ nhớ 
