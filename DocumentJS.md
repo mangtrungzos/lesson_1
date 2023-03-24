@@ -384,11 +384,14 @@ writeLog('text message');
     find()
 > Tìm kiếm trong Array phần tử cần tìm, nếu có thì find method sẽ trả về đúng phần tử đó
 > Sẽ trả về chính elements thỏa mãn điều kiện đầu tiên tìm được
+> Thực hiện cho đến khi có giá trị đầu tiên thỏa mãn và trả về true
 > Nếu không có => undefined
     filter()
 > Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn điều kiện
-> Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach
+> Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach 
     map()
+> Cho phép lặp qua các phần tử của mảng
+> Cho phép xử lí giá trị của mảng đó và trả về 1 mảng mới
 > Sử dụng khi muốn chỉnh sửa hay thay đổi những elements của 1 array
 > originArray: trả về array gốc
     reduce()
@@ -673,3 +676,14 @@ var headingElement = document.querySelector('h1');
     boxElement.outerHTML = '<span>Test</span>'; // Ghi đè thẻ box
 
     console.log(boxElement) // <div class="box"></div> | Do vẫn còn trong bộ nhớ 
+
+
+# Node properties
+\\ clientHeight | clientWidth 
+- Chiều cao, rộng của element
+\\ Attributes node
+- contenteditable="" : Sửa text như trong thẻ input
+
+# DOM CSS
+- Style object
+> Object.assign(..., {}) 

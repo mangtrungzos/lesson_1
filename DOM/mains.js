@@ -84,4 +84,5 @@ boxElement.outerHTML = '<span>Test</span>'; // Ghi đè thẻ box
 console.log(boxElement); // return thẻ box | vẫn còn là do còn trong bộ nhớ | do get ra từ querySelector
 // Trong DOM thật không còn nữa
 
-/*---------------------*/
+
+/*-------------------------------------------------*/
