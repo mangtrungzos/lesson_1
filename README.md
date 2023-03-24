@@ -1,1 +1,1 @@
-# lesson_1
+HERE'S A LESSON IN JAVASCRIPT! 
