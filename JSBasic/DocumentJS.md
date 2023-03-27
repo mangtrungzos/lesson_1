@@ -615,7 +615,7 @@ EX:
 >> getElementsbyClassName()
 
 >> getElementsByTagName() : Không trả về trực tiếp element / Return HTML Collection
->> querySelectorAll() : Không trả về trực tiếp element
+>> querySelectorAll() : Không trả về trực tiếp element | Trả về là 1 node list (1 vài trường hợp dùng vòng lặp)
 --------------------
 >Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
 
@@ -687,3 +687,44 @@ var headingElement = document.querySelector('h1');
 # DOM CSS
 - Style object
 > Object.assign(..., {}) 
+
+# ClassList Property
+- Một thuộc tính của element node
+- Chỉ truy cập vào thuộc tính khi đang lấy ra được element node
+- DomTokenList : được lấy ra từ element
+
+\\ add
+- Thêm class vào element  
+
+\\ contains
+- Kiểm tra 1 class có nằm trong element hay không
+
+\\ remove
+- Xóa bỏ 1 class ở element
+
+\\ toggle
+- Nếu có 1 class trong element thì khi gọi phương thức toggle thì nó sẽ xóa bỏ class đó | Còn không có class ở element thì toggle sẽ thêm vào
+
+
+# DOM events
+- Là những sự kiện diễn ra trong quá trình người dùng tương tác
+- Xác định hành vi người dùng để viết ra mã bắt được sự kiện 
+
+\\ 1. Attribute events
+- Cách sử dụng để lắng nghe sự kiện diễn ra, những hành vi của người dùng
+
+\\ 2. Assign event using the element node
+- Gán sự kiện bằng element node
+
+> note: Để có thể sử dụng cách 1 hoặc cách 2 thì phải xác định tên events diễn ra
+- VD: Khi click vào thẻ thì tên sự kiện là click
+
+> syntax: on...
+- VD: onlick
+
+> this: chính là node element
+
+> Sự kiện nổi bọt: Khi click vào 1 element con của 1 element(cha) đang lắng nghe một sự kiện thì sẽ lắng nghe hành động của thẻ con trước sau đó nổi bọt ra ngoài (đến thẻ cha của nó vẫn sẽ bị ảnh hưởng)
+
+## target
+> target trả lại chính element đang lắng nghe DOM events
