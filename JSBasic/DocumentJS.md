@@ -724,7 +724,7 @@ var headingElement = document.querySelector('h1');
 
 > this: chính là node element
 
-> Sự kiện nổi bọt: Khi click vào 1 element con của 1 element(cha) đang lắng nghe một sự kiện thì sẽ lắng nghe hành động của thẻ con trước sau đó nổi bọt ra ngoài (đến thẻ cha của nó vẫn sẽ bị ảnh hưởng)
+> Sự kiện nổi bọt: Khi click vào 1 element con của 1 element(cha) đang lắng nghe một sự kiện thì sẽ lắng nghe hành động của thẻ con trước sau đó nổi bọt ra ngoài (đến thẻ cha của nó vẫn sẽ bị ảnh hưởng) 
 
 ## target
 > target trả lại chính element đang lắng nghe DOM events
