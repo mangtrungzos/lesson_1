@@ -37,3 +37,4 @@ for (var i = 0; i < h2Elements.length; ++i){
 // }
 
 // target trả lại chính element đang lắng nghe DOM events
+// 
