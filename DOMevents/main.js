@@ -22,6 +22,7 @@ for (var i = 0; i < h2Elements.length; ++i){
 }
 // sự kiện onclick sẽ diễn ra sau khi vòng for được chạy
 
+// Đối số truyền vào trong function mouse event
 /** PROBLEM */
 
 // Nếu sử dụng console.log(h2Elements[i]) | Sẽ trả về undefined
@@ -37,3 +38,65 @@ for (var i = 0; i < h2Elements.length; ++i){
 // }
 
 // target trả lại chính element đang lắng nghe DOM events
+
+
+/**-------------------DOM events example------------------- */
+// 1. Input / select
+// 2. Key up / down
+
+
+// 1
+var inputElement = document.querySelector('input[type="text"]');
+
+// Lấy ra giá trị được nhập vào thẻ input
+
+// onchange : sự thay đổi (Lấy giá trị sau khi blur)
+
+// oninput: Gõ đến đâu in ra đến đó (Lấy giá trị khi gõ trực tiếp)
+
+inputElement.oninput = function(e) {
+    console.log(e.target.value); // value lấy ra giá trị của thẻ input
+}
+
+
+var inputElements = document.querySelector('input[type="checkbox"]');
+
+inputElements.onchange = function(e) {
+    console.log(e.target.checked); // checked: Lấy tình trạng checked or not checked
+}
+
+var inputElementSelect = document.querySelector('select');
+
+inputElementSelect.onchange = function(e) {
+    console.log(e.target.value);
+}
+
+
+// 2
+// var inputElementKey = document.querySelector('input[type="text"]');
+
+// inputElementKey.onkeydown = function(e) {
+//     console.log(e.which);
+    
+//     switch(e.which){
+//         case 27:
+//             console.log('Exit');
+//             break;
+//     }
+// }
+
+document.onkeydown = function(e){d
+    switch(e.which) {
+        case 27:
+            console.log('Exit');
+            break;
+        case 13:
+            console.log('Send chat');
+            break;
+    }
+}
+
+
+
+
+

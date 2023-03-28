@@ -728,3 +728,13 @@ var headingElement = document.querySelector('h1');
 
 ## target
 > target trả lại chính element đang lắng nghe DOM events
+
+\\ Lấy ra giá trị của element 
+- e.target.value
+
+## get value
+- Lấy value của element thông qua oninput & onchange
+
+\\ onkeyup: nhấn phím và sau đó nhấc lên
+\\ onkeydown: nhấn phím xuống
+\\ onkeypress: nhấn và giữ
