@@ -607,6 +607,7 @@ EX:
 > console.log(document.forms);
 
 \\ Những thẻ được quy vào HTML collection: a, image, forms,...
+- document.anchors : Lấy ra thẻ a
 \\ Attribute nằm trong thẻ tag
 \\ Trong DOM 1 thẻ tag là 1 element
 
@@ -619,6 +620,9 @@ EX:
 --------------------
 >Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
 
+\\ forEach chỉ có ở nodeList
+
+- document.links: trả về 1 HTML collection
 ## document.write
 - Ngay sau khi được thực thi thì sẽ in ra giá trị truyền vào
 - Nếu ghi sau khi DOM được tải xong thì lúc đó nó sẽ overwrite(ghi đè) lại tất cả nội dụng body
@@ -738,3 +742,12 @@ var headingElement = document.querySelector('h1');
 \\ onkeyup: nhấn phím và sau đó nhấc lên
 \\ onkeydown: nhấn phím xuống
 \\ onkeypress: nhấn và giữ
+
+- console.log(e.which) // MÃ CODE CỦA PHÍM
+
+## Two methods of DOM events (main.js)
+\\ 1. preventDefault
+- Dùng để loại bỏ hành vi mặc định của trình duyệt trên thẻ HTML
+
+\\ 2. stopPropagation
+- Loại bỏ được sự kiện nổi bọt

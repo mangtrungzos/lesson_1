@@ -5,30 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul{
+            display: none;
+        }
+
+        input:focus ~ ul{ 
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1 onclick="console.log(this)">
+    <!-- Input / Select | Key down / up -->
+    <!-- <h1 onclick="console.log(this)">
         <span>DOM events</span>
     </h1>
 
     <h2>
-        <span>DOM events</span>
-    </h2>
-    <h2>
         <span>DOM events 1</span>
     </h2>
+    
     <h2>
         <span>DOM events 2</span>
-    </h2>
+    </h2> -->
 
-    <input type="text">
-    <input type="checkbox">
+    <!-- <input type="text">
+    <input type="checkbox"> -->
 
-    <select>
+    <!-- <select>
         <option value="value 1">1</option>
         <option value="value 2">2</option>
         <option value="value 3">3</option>
-    </select>
+    </select> -->
+
+
+    <!-- preventDefault -->
+    <input placeholder="Tìm kiếm" />
+    <ul>
+        <li>Javascript</li>
+        <li>PHP</li>
+        <li>golang</li>
+    </ul>
+
+    <br />
+
+    <a href="https://f8.edu.vn">
+        Học lập trình
+    </a>
+
+    <br />
+
+    <a href="https://google.com.vn">
+        Tìm kiếm
+    </a>
+
+
+    <!-- stopPropagation -->
+    <div>
+        DIV
+
+        <button>Click me!</button>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>

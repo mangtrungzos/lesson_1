@@ -46,7 +46,7 @@ for (var i = 0; i < h2Elements.length; ++i){
 
 
 // 1
-var inputElement = document.querySelector('input[type="text"]');
+// var inputElement = document.querySelector('input[type="text"]');
 
 // Lấy ra giá trị được nhập vào thẻ input
 
@@ -54,22 +54,22 @@ var inputElement = document.querySelector('input[type="text"]');
 
 // oninput: Gõ đến đâu in ra đến đó (Lấy giá trị khi gõ trực tiếp)
 
-inputElement.oninput = function(e) {
-    console.log(e.target.value); // value lấy ra giá trị của thẻ input
-}
+// inputElement.oninput = function(e) {
+//     console.log(e.target.value); // value lấy ra giá trị của thẻ input
+// }
 
 
-var inputElements = document.querySelector('input[type="checkbox"]');
+// var inputElements = document.querySelector('input[type="checkbox"]');
 
-inputElements.onchange = function(e) {
-    console.log(e.target.checked); // checked: Lấy tình trạng checked or not checked
-}
+// inputElements.onchange = function(e) {
+//     console.log(e.target.checked); // checked: Lấy tình trạng checked or not checked
+// }
 
-var inputElementSelect = document.querySelector('select');
+// var inputElementSelect = document.querySelector('select');
 
-inputElementSelect.onchange = function(e) {
-    console.log(e.target.value);
-}
+// inputElementSelect.onchange = function(e) {
+//     console.log(e.target.value);
+// }
 
 
 // 2
@@ -85,17 +85,64 @@ inputElementSelect.onchange = function(e) {
 //     }
 // }
 
-document.onkeydown = function(e){d
-    switch(e.which) {
-        case 27:
-            console.log('Exit');
-            break;
-        case 13:
-            console.log('Send chat');
-            break;
-    }
+// document.onkeydown = function(e){
+//     switch(e.which) {
+//         case 27:
+//             console.log('Exit');
+//             break;
+//         case 13:
+//             console.log('Send chat');
+//             break;
+//     }
+// }
+
+
+
+/**--------------------Two methods of DOM events--------------------- */
+
+// 1. preventDefault
+// 2. stopPropagation
+
+
+// 1. preventDefault
+// var aElements = document.links;
+
+// for (var i = 0; i < aElements.length; ++i){
+//     aElements[i].onclick = function(e){
+        
+//         if (!e.target.href.startsWith('https://f8.edu.vn')){ // Khi thuộc tính href không chứa chuỗi địa chỉ này thì sẽ ngăn chặn hành vi mặc định
+//             e.preventDefault();
+//         }
+//     }
+// }
+
+
+// Example preventDefault
+// Ngăn chặn hành vi mặc định của trình duyệt khi onmousedown lên thẻ ul
+
+ulElement = document.querySelector('ul');
+
+// onmousedown: Khi click chuột xuống
+
+ulElement.onmousedown = function(e){
+    e.preventDefault();
 }
 
+ulElement.onclick = function(e){
+    console.log(e.target);
+}
+
+
+// stopPropagation
+
+document.querySelector('div').onclick = function(){
+    console.log('DIV')
+}
+
+document.querySelector('button').onclick = function(e){ // e bắt sự kiện
+    e.stopPropagation();
+    console.log('Click me!')
+}
 
 
 
