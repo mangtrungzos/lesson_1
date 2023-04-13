@@ -11,6 +11,7 @@
     3. Confirm : Tạo ra 1 box để xác nhận
     4. Prompt : kết hợp cả alert và confirm và có  thêm ô input
     5. Set timeout: đối tượng truyền vào là 1 function / Cho 1 đoạn code được chạy sau 1 khoảng thời gian và chỉ chạy được 1 lần / Giá trị thời gian là mili giây
+> 3s = 3000 mls
     6. Set interval : Chạy 1 đoạn code sau 1 khoảng thời gian và lặp đi lặp lại
 
 # Cú pháp Comments trong JS
@@ -713,6 +714,11 @@ var headingElement = document.querySelector('h1');
 # DOM events
 - Là những sự kiện diễn ra trong quá trình người dùng tương tác
 - Xác định hành vi người dùng để viết ra mã bắt được sự kiện 
+- Bên trong DOM diễn ra rất nhiều sự kiện liên quan đến trình duyệt
+
+- DOM event gán 1 function() và viết các công việc muốn thực hiện trong 1 công việc
+
+> Sử dụng DOM event trong những case(TH): muốn lắng nghe 1 sự kiện nào đó và không có nhu cầu muốn gỡ bỏ nó đi 
 
 \\ 1. Attribute events
 - Cách sử dụng để lắng nghe sự kiện diễn ra, những hành vi của người dùng
@@ -751,3 +757,17 @@ var headingElement = document.querySelector('h1');
 
 \\ 2. stopPropagation
 - Loại bỏ được sự kiện nổi bọt
+
+
+# Event listener
+- Là một phương pháp giúp lắng nghe được những event trong DOM xảy ra (cũng tương tự DOM event) 
+> Muốn xử lý nhiều việc khi 1 event xảy ra thì vẫn có thể sử dung DOM event(Viết chung vào 1 phương thức) 
+
+> Especialy: Khi 1 sự kiện diễn ra và muốn hủy bỏ lắng nghe sự kiện đó trong 1 case nào đó / thì sử dụng Event Listener
+
+> Truyền vào 2 đối số: event name, callback function
+
+\\ Lắng nghe: Gọi đến addEventListener
+\\ Hủy bỏ lắng nghe: removeEventListener
+
+> Mỗi 1 function là 1 event listener

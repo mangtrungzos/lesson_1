@@ -146,4 +146,11 @@ document.querySelector('button').onclick = function(e){ // e bắt sự kiện
 
 
 
+//  khi click vào button sẽ đổi màu chữ button sang màu #fff.
+var buttons = document.querySelector('button')
+button.onclick = function(){
+    buttons.style.color = '#fff'
+}
+
+
 
