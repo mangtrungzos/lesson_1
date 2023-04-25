@@ -771,3 +771,25 @@ var headingElement = document.querySelector('h1');
 \\ Hủy bỏ lắng nghe: removeEventListener
 
 > Mỗi 1 function là 1 event listener
+
+------------------------------------------------------------------------------------
+
+# JSON - JavaScript Object Notation
+\\ Là một định dạng (format) dữ liệu (chuỗi) 
+> Không phải là một kiểu dữ liệu
+> Viết theo đúng cú pháp thì đó là JSON
+
+\\ Là một định dạng dữ liệu được thể hiện dưới dạng chuỗi 
+> Nên không bị gắn chặt với language này
+
+\\ Trong bất kì ngôn ngữ nào cũng sử dụng được
+
+\\ JSON: Number,String, Boolean, Null, Array, Object
+> JSON được thể hiện dưới những dạng dữ liệu này
+
+\\ Mã hóa / Giải mã 
+\\ Encode / decode  
+\\ Stringify: Từ JavaScript types -> JSON
+\\ Parse: Từ JSON -> JavaSript types
+
+> Thể hiện kiểu dữ liệu dạng chuỗi dùng : ""
