@@ -564,7 +564,7 @@ EX:
 
 # Callback
 > Là hàm (function) được truyền qua đối số 
-
+> Dùng để xử lí những thao tác bất đồng bộ
 # Empty elements of array (Các phần tử rỗng của mảng)
 
 --------------------------------------------------------
@@ -793,3 +793,22 @@ var headingElement = document.querySelector('h1');
 \\ Parse: Từ JSON -> JavaSript types
 
 > Thể hiện kiểu dữ liệu dạng chuỗi dùng : ""
+
+# Promise
+- JavaScript là ngôn ngữ đồng bộ / thao tác xử lí là bất đồng bộ / ngôn ngữ đơn luồng
+
+\\ Sync (Đồng bộ)
+- Thằng nào viết trước chạy trước
+- Chạy theo luồng tuần tự
+\\ Async (Bất đồng bộ)
+
+\\ Lý thuyết, cách hoạt động
+
+> Những thao tác bất đồng bộ
+\\ setTimeout, setInterval, fetch, xmlHttpRequest, file reading
+\\ request animation frame
+>> sử dụng callback để xử lí những thao tác bất đồng bộ
+
+## Promise(pain)
+\\ Callback hell -> Tập trung vào vấn đề khi sử dụng callback
+\\ Pyramid of doom -> Tổng quan khi viết code
