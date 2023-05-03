@@ -171,9 +171,10 @@
 
 -----------------------------------------------------------------------------
 # Function
-// Cách đặt tên hàm : a-z A-Z 0-9 _ $
-// Không được đặt số ở đầu tiên
-// 1 function chỉ làm 1 việc
+\\ Cách đặt tên hàm : a-z A-Z 0-9 _ $
+\\ Không được đặt số ở đầu tiên
+\\ 1 function chỉ làm 1 việc
+\\ 1 function không được định nghĩa -> undefined 
 
 > Toán tử call () : dùng để gọi hàm 
 
@@ -792,10 +793,11 @@ var headingElement = document.querySelector('h1');
 \\ Stringify: Từ JavaScript types -> JSON
 \\ Parse: Từ JSON -> JavaSript types
 
-> Thể hiện kiểu dữ liệu dạng chuỗi dùng : ""
+> Thể hiện kiểu dữ liệu dạng chuỗi dùng : "" 
 
 # Promise
 - JavaScript là ngôn ngữ đồng bộ / thao tác xử lí là bất đồng bộ / ngôn ngữ đơn luồng
+> Promise sinh ra để giải quyết vấn đề trong quá trình lập trình "bất đồng bộ"
 
 \\ Sync (Đồng bộ)
 - Thằng nào viết trước chạy trước
@@ -812,3 +814,57 @@ var headingElement = document.querySelector('h1');
 ## Promise(pain)
 \\ Callback hell -> Tập trung vào vấn đề khi sử dụng callback
 \\ Pyramid of doom -> Tổng quan khi viết code
+
+## Promise(concept)
+> Create a Promise
+\\ Khi gọi new Promise thì khi đó sẽ ngay lập tức gọi đến 1 func Excutor
+\\ Và sẽ gọi tới func trước cả khi nhận được tại đối tượng promise
+
+> 2 bước tạo Promise
+\\ 1. new Promise
+\\ 2. Excutor
+- Trong Excutor phải gọi 1 trong 2 resolve() / reject()
+- Nếu không gọi thì Promise sẽ ở trạng thái treo(không thành công or thất bại)
+>> sẽ sinh ra lỗi memory leak 'Rò rỉ bộ nhớ' / Lãng phí bộ nhớ
+
+> Trạng thái pendding (chờ): chờ việc thành công hay thất bại / Khi k resolve, reject thì sẽ ở trạng thái pendding ==> Gây rò rỉ bộ nhớ
+
+## lỗi trong Promise 
+> Uncaught (in promise) -> Promise không sử dụng catch(không bắt lỗi)
+
+## Promise(chain)
+- Tính chất chuỗi
+\\ Khi resolve xong / sẽ thực thi callback của .then đầu tiên -> .then thứ hai, sau khi thực thi xong -> .then thứ 3 
+> Thực thi theo tính chất chuỗi từng phương thức 1 
+
+promise 
+    .then(() => {
+        console.log(1); 
+    })
+    .then(() => {
+        console.log(2);
+    })
+    .then(() => {
+        console.log(3);
+    })
+
+\\ => result : 1 2 3
+\\ Callback thứ nhất return cái gì thì ở ta sẽ nhận được value đó ở callback thứ hai
+>> Kết quả trả về của func đầu tiên lại là tham số đầu vào của func tiếp theo
+
+
+> Trường hợp 'return' về 1 promise
+
+promise
+    .then(function(){
+        return new Promise(function(resolve){
+            setTimeout(resolve, 3000);
+        });
+    })
+    .then(function(data){
+        console.log(data);
+    })
+
+\\ .then kế tiếp sẽ phải chờ promise phía trước được giải quyết thì sau đó mới lọt vào .then kế tiếp
+
+> Không phụ thuộc nhau thì hãy chạy song song và đồng thời
