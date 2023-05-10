@@ -393,6 +393,7 @@ writeLog('text message');
 > Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach 
     map()
 > Cho phép lặp qua các phần tử của mảng
+> Duyệt qua 1 mảng
 > Cho phép xử lí giá trị của mảng đó và trả về 1 mảng mới
 > Sử dụng khi muốn chỉnh sửa hay thay đổi những elements của 1 array
 > originArray: trả về array gốc
@@ -852,7 +853,7 @@ promise
 \\ Callback thứ nhất return cái gì thì ở ta sẽ nhận được value đó ở callback thứ hai
 >> Kết quả trả về của func đầu tiên lại là tham số đầu vào của func tiếp theo
 
-
+> Trong .then return là trả về 1 promise
 > Trường hợp 'return' về 1 promise
 
 promise
@@ -868,3 +869,6 @@ promise
 \\ .then kế tiếp sẽ phải chờ promise phía trước được giải quyết thì sau đó mới lọt vào .then kế tiếp
 
 > Không phụ thuộc nhau thì hãy chạy song song và đồng thời
+
+## Promise Ex(promiseEX.js)
+\\ promise hell -> bị phụ thuộc nhau quá nhiều
