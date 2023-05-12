@@ -63,7 +63,7 @@ function getUsersByIds(userIds){
        setTimeout(() => {
            resolve(result); 
        }, 1000);
-    },1000);
+    });
 }
 
 // Promise hell
