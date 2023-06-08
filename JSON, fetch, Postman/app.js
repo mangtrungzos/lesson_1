@@ -1,13 +1,21 @@
 // 1. Event listeners --> OK
 // 2. JSON
-// 3. Fetch
-// 4. DOM location
-// 5. Local storage
-// 6. Session storage
-// 7. Coding convention
-// 8. Best Practices
-// 9. Mistakes
-// 10. Performance
+//      - Ứng dụng thực tế của JSON
+// 3. Promise
+//  - Sync
+//  - Async
+//  - Nỗi đau
+//  - Lý thuyết, cách hoạt động
+//  - Thực hành, ví dụ
+//  - Ứng dụng thực tế của Promise (app.js)
+// 4. Fetch
+// 5. DOM location
+// 6. Local storage
+// 7. Session storage
+// 8. Coding convention
+// 9. Best Practices
+// 10. Mistakes
+// 11. Performance
 
 
 
@@ -92,14 +100,17 @@ function getComments(){
     return new Promise((resolve) =>{
         setTimeout(() =>{
             resolve(comments);
-        }, 1000);
+        }, 1000); // Sau 1s resolve dữ liệu
     });
 }
 
 function getUserByIds(userIds){
     return new Promise((resolve) =>{
-        var result = users.filter((user) =>{
-            return userIds.includes(user.id)
+        // Lọc ra user nằm trong list userIds
+        var result = users.filter((user) =>{ 
+            
+            // Trả về chỉ bao gồm user.id
+            return userIds.includes(user.id) 
         });
         setTimeout(() => {
             resolve(result);
@@ -107,12 +118,16 @@ function getUserByIds(userIds){
     });
 }
 
-getComments()
+// Lấy comments trước -> Lấy user_id từ user_id -> sau đó chọc vào user -> Lấy ra name of user 
+
+
+getComments() 
     .then((comments) => {
         var userIds = comments.map((comments) =>{
             return comments.user_id;
+        // Mảng mới userIds
         })
-        return getUserByIds(userIds)
+        return getUserByIds(userIds) // Truyền vào list userIds
             .then((users) =>{
                 return{
                     users: users,
@@ -130,4 +145,40 @@ getComments()
             html += `<li>${user.name}: ${comment.content}</li>`;
         });
         commentBlock.innerHTML = html;
+    });
+
+
+/////////////////// Fetch ///////////////////
+
+// API (URL) - Application programming interface
+
+// Backend -> API (URL) -> Fetch -> JSON/XML
+// -> JSON.parse -> Javascript types
+// -> Rendet ra giao diện với HTML
+
+var postApi = 'https://jsonplaceholder.typicode.com/posts';
+
+    // stream 
+fetch(postApi) 
+// Fetch gọi API -> Nhận response -> từ response, json ra 1 Promise
+
+    .then(function(Response) {
+        return Response.json();
+        // JSON.parse: JSON -> Javascript types
+    })
+    // json ra 1 Promise để nhận ra được json dưới 
+    .then(function(posts) {
+        // console.log(posts); // posts, nhận được kiểu dữ liệu ở đây -> sử dụng các kỹ thuật với Js
+        var htmls = posts.map(function(post){
+            return `<li>
+                <h2>${post.title}</h2>
+                <p>${post.body}</p>
+            </li>`;
+        });
+        var html = htmls.join('');
+        document.getElementById('post-block').innerHTML = html;
+    })
+    // When API call fails, show message
+    .catch(function(err) {
+        alert('Error!');
     });

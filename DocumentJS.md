@@ -872,3 +872,11 @@ promise
 
 ## Promise Ex(promiseEX.js)
 \\ promise hell -> bị phụ thuộc nhau quá nhiều
+
+# Ứng dụng thực tế của Promise(app.js)
+
+## Fetch (app.js)
+> Gọi ra APi để lấy ra nội dung được lưu trữ ở phía Back-end / Front-end nhận nội dụng đó và render ra trình duyệt
+
+\\ API (URL) - Application programming interface
+\\ Cổng giao tiếp giữa các phần mềm
