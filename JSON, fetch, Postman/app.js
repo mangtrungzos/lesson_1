@@ -148,13 +148,15 @@ getComments()
     });
 
 
-/////////////////// Fetch ///////////////////
+/////////////////////////////// Fetch //////////////////////////////////
 
 // API (URL) - Application programming interface
 
 // Backend -> API (URL) -> Fetch -> JSON/XML
 // -> JSON.parse -> Javascript types
 // -> Rendet ra giao diện với HTML
+
+// website: placeholders API 
 
 var postApi = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -165,6 +167,7 @@ fetch(postApi)
     .then(function(Response) {
         return Response.json();
         // JSON.parse: JSON -> Javascript types
+        // json(): trả về 1 Promise -> In Promise đã resolve -> json.parse
     })
     // json ra 1 Promise để nhận ra được json dưới 
     .then(function(posts) {
@@ -181,4 +184,14 @@ fetch(postApi)
     // When API call fails, show message
     .catch(function(err) {
         alert('Error!');
+    });
+
+    //////////////////// JSON Server: API Server //////////////////////
+var courseApi = "http://localhost:3000/courses";
+fetch(courseApi)
+    .then((response) =>{
+        return response.json();
+    })
+    .then((course) =>{
+        console.log(course);
     });
