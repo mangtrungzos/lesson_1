@@ -878,5 +878,14 @@ promise
 ## Fetch (app.js)
 > Gọi ra APi để lấy ra nội dung được lưu trữ ở phía Back-end / Front-end nhận nội dụng đó và render ra trình duyệt
 
+> REST API: 1 tiêu chuẩn / hành động dựa trên phương thức của HTTP Protocol
 \\ API (URL) - Application programming interface
 \\ Cổng giao tiếp giữa các phần mềm
+
+\\ JSON server: API Server (Fake) / Mock API
+\\ CRUD: 4 hành động để thao tác với API
+    - Create: Tạo mới -> POST
+    - Read:: Lấy dữ liệu -> GET
+    - Update: Chỉnh sửa -> PUT / PATCH
+    - Delete: Xóa -> DELETE
+\\ Postman:

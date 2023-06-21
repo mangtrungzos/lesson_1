@@ -9,6 +9,10 @@
 //  - Thực hành, ví dụ
 //  - Ứng dụng thực tế của Promise (app.js)
 // 4. Fetch
+// - JSON server: API Server (Fake) / Mock API
+// - CRUD : Create, Read, Update, Delete
+// - Postman
+// 4.1 Example
 // 5. DOM location
 // 6. Local storage
 // 7. Session storage
@@ -142,7 +146,7 @@ getComments()
             var user = data.users.find((user) =>{
                 return user.id === comment.user_id;
             });
-            html += `<li>${user.name}: ${comment.content}</li>`;
+            html += `<li>${user.name}: ${comment.content}</li>`;    
         });
         commentBlock.innerHTML = html;
     });

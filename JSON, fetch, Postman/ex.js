@@ -1,71 +1,95 @@
-let users = [
-    {
-      id: 1,
-      name: "Nguyen Van A",
-    },
-    {
-      id: 2,
-      name: "Nguyen Van B",
-    },
-    {
-      id: 3,
-      name: "Nguyen Van C",
-    },
-  ];
-  
-  let comments = [
-    {
-      id: 1,
-      userId: 2,
-      content: "Hello, how are you?",
-    },
-    {
-      id: 2,
-      userId: 1,
-      content: "Im fine, how about you?",
-    },
-    {
-      id: 3,
-      userId: 3,
-      content: "Hello B, nice to meet you!",
-    },
-    {
-      id: 4,
-      userId: 1,
-      content: "Nice to meet you",
-    },
-  ];
-  
-  let getComments = () =>
-    new Promise((resolve) => {
-      setTimeout(() => resolve(comments), 1000);
-    });
-  
-  let getUserById = (userIds) =>
-    new Promise((resolve) => {
-      let result = users.filter((user) => userIds.includes(user.id));
-      setTimeout(() => resolve(result), 1000);
-    });
-  
-  getComments()
-    .then((comments) => {
-      let userId = comments.map((comment) => comment.userId);
-      return getUserById(userId).then((user) => {
-        return {
-          users: user,
-          comments: comments,
-        };
-      });
-    })
-    .then((data) => {
-      var commentBlock = document.getElementById("comment-block");
-      var html = "";
-      data.comments.forEach((comment) => {
-        let user = data.users.find((user) => user.id === comment.userId);
-        console.log(user.name);
-        html += `<li>${user.name}: ${comment.content}</li>`;
 
-      });
-      commentBlock.innerHTML = html;
+var courseApi =  'http://localhost:3000/courses';
+
+
+function start(){
+  // callback return courses that match the renderCourses argument
+  getCourses(renderCourses);
+  // renderCourses will be passes as a callback
+  // callback will be called when fetch called Api(Api fetch courses will call callback)
+  // will call back renderCourses
+  // and return data in function renderCourses
+
+  handleCreateFrom();
+}
+
+// run first
+start();
+
+// Functions
+function getCourses(callback) {
+  fetch(courseApi)
+    .then((response) =>{
+        return response.json();
+    })
+    // callback received data is objects
+    .then(callback);
+    // Then callback will use to make ... 
+}
+
+// fetch mozilla 
+function createCourse(data, callback){
+  var options = {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json'
+    }
+  };
+  fetch(courseApi, options)
+    .then((response) =>{
+      return response.json();
+    })
+    .then(callback);
+}
+
+function handleDeleteCourse(id){
+  var options = {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json'
+    }
+  };
+  fetch(courseApi + '/' + id, options)
+    .then((response) =>{
+      return response.json();
+    })
+    .then(() =>{
+      var courseItem = document.querySelector('.course-item-' + id);
+      if(courseItem){
+        courseItem.remove();
+      }
     });
-  
+}
+
+function renderCourses(courses) { // So we will received courses
+    var listCoursesBlock = 
+        document.querySelector('#list-courses');
+    var htmls = courses.map((course) =>{
+        return `
+            <li class="course-item-${course.id}">
+                <h4>${course.name}</h4>
+                <p>${course.description}</p>
+                <button onclick="handleDeleteCourse(${course.id})">Xóa</button>
+                <button onclick="handleAddCourse(${course.id}">Thêm</button>
+            </li>
+        `;
+    });
+    listCoursesBlock.innerHTML = htmls.join('');
+}
+
+function handleCreateFrom(){
+  var createBtn = document.querySelector('#create');
+  createBtn.onclick = () => {
+      var name = document.querySelector('input[name="name"]').value;
+      var description = document.querySelector('input[name="description"]').value;
+      
+      var formData = {
+        name: name,
+        description: description
+      };
+      createCourse(formData, function(){
+        getCourses(renderCourses);
+      });
+  };
+}
