@@ -31,7 +31,7 @@
 // True là bởi vì gán lại thuộc tính name của cái object được gán cho a chứ có gán lại cho a nên không lỗi
 
 
-// Template literals
+// --------------------------Template literals----------------------
 
 const courseName = 'Javascript';
 const courseName1 = 'PHP';
@@ -44,3 +44,48 @@ Line 2
 Line 3`;
 
 console.log(lines);
+
+
+//-----------------------Arrow function----------------------------
+
+const logger = log => console.log(log);
+
+logger('message...');
+
+/////////////////////////
+const sum = (a, b) => ({a: a, b: b});
+
+console.log(sum(2,2));
+////////////////////////
+const course = {
+    name: 'Javascript!',
+    getName: () => {
+        return this; // context
+    }
+};
+
+console.log(course.getName());
+////////////////////////
+
+// Arrow function don't use make constructor function 
+// const Course = (name, price) => {
+//     this.name = name;
+//     this.price = price;
+// }
+
+// const jsCourse = new Course('Javascript', 100);
+
+// console.log(jsCourse); // Error!
+////////////////////////
+const materials = [
+    'Hydrogen',
+    'Helium',
+    'Lithium',
+    'Beryllium'
+  ];
+console.log(materials.map(material => material.length));
+// Expected output: Array [8, 6, 7, 9]
+///////////////////////
+const func = (a) => ({ foo: a });
+
+console.log(func(1));
