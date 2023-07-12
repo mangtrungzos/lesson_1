@@ -463,6 +463,9 @@ writeLog('text message');
 
 \\ String, Number, Array, Date là những Object constructor
 
+## Constructor function
+\\ Là một khuôn mẫu giúp tạo ra 1 bản thiết kế cho 1 đối tượng
+
 # Object prototype - Basic (Nguyên mẫu của Object - Nguyên mẫu để tạo nên 1 đối tượng)
 \\ Định nghĩa 1 phương thức cho 1 array constructor và khi array cons có những phương thức nào thì đối tượng được khởi tạo từ nó sẽ được thừa hưởng lại những phương thức này
 \\ Object prototype là nguyên liệu để tạo nên ngôi nhà

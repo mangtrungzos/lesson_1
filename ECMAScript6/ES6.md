@@ -60,3 +60,11 @@ if (...) {
     const jsCourse = new Course('Javascript', 100);
 
 > Arrow function không dùng được cho declaration function
+
+# CLasses in ES6
+\\ Có Phương thức constructor 
+
+# Default parameter values
+\\ Sử dụng đối với những hàm có tham số không bắt buộc phải nhập
+
+> những tham số đặt kiểu is (isAlert,...) thì mặc định là kiểu false, true

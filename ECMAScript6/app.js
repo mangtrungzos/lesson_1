@@ -89,3 +89,66 @@ console.log(materials.map(material => material.length));
 const func = (a) => ({ foo: a });
 
 console.log(func(1));
+
+//----------------------------Classes------------------------
+// function Course(name, price){
+//     this.name = name;
+//     this.price = price;
+//     this.getName = () => this.name;
+
+//     const isSuccess = false;
+// }
+
+class Course {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getPrice() {
+        return this.price;
+    }
+
+    run() {
+        const isSuccess = false;
+    }
+}
+
+const phpCourse = new Course('PHP', 1000);
+const jsCourse = new Course('JS', 1200);
+
+console.log(phpCourse);
+console.log(jsCourse);
+/////////////////////////
+class Person{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+}
+
+// Expected results
+const person = new Person('Sang', 21);
+console.log(`Tên: ${person.name}, tuổi: ${person.age}`);
+// Output: 'Tên: Long, tuổi: 22'
+
+// --------------------------Default parameters values-------------------
+function Logger(log, type = 'log') {
+    console[type](log);
+}
+
+Logger('Message...');
+///////////////////////////
+function multiply(a, b = 1) {
+    return a * b;
+  }
+  
+  console.log(multiply(5, 2));
+  // Expected output: 10
+  
+  console.log(multiply(5));
+  // Expected output: 5
