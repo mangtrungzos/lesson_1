@@ -68,3 +68,17 @@ if (...) {
 \\ Sử dụng đối với những hàm có tham số không bắt buộc phải nhập
 
 > những tham số đặt kiểu is (isAlert,...) thì mặc định là kiểu false, true
+
+# Enhanced Object Literals
+\\ 1. Định nghĩa key: value for object
+\\ 2. Định nghĩa method cho object
+\\ 3. Định nghĩa key cho object dưới dạng biến
+
+> Tùy vào giá trị của biến lấy ra một giá trị của value tương ứng của object 
+    var fieldName = 'name';
+    var fieldPrice = 'price';
+
+    const courses = {
+        [fieldName]: 'PHP',
+        [fieldPrice]: 1000
+    };

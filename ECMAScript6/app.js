@@ -37,7 +37,13 @@ const courseName = 'Javascript';
 const courseName1 = 'PHP';
 const descritpion = `Course name: ${courseName} ${courseName1} \{}`;
 
-console.log(descritpion);
+const coursesName = { // Có sử dụng Enhanced object literal
+    [courseName]: 'TypeScript',
+    [courseName1]: 'PHP',
+    [descritpion]: 'Javascript, PHP' 
+};
+// console.log(descritpion);
+console.log(coursesName);
 
 const lines = `Line 1
 Line 2
@@ -152,3 +158,13 @@ function multiply(a, b = 1) {
   
   console.log(multiply(5));
   // Expected output: 5
+
+// --------------------------- Enhanced object literals------------------
+var fieldName = 'name';
+var fieldPrice = 'price';
+
+const courses = {
+    [fieldName]: 'PHP',
+    [fieldPrice]: 1000
+};
+console.log(courses);
