@@ -332,7 +332,7 @@ writeLog('text message');
 \\ Cách lấy phần tử của mảng
 
 \\ Example: 
-    const cars = ["Saab", "Volvo", "BMW"];  
+    const cars = ["Saab", "Volve", "BMW"];  
     let x = cars[1]; -> Lấy ra Volve
 
 \\ Example: Lấy ra chiều dài của mảng

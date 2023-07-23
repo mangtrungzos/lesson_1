@@ -82,3 +82,47 @@ if (...) {
         [fieldName]: 'PHP',
         [fieldPrice]: 1000
     };
+
+# Destructuring ( phân rã )
+\\ Use with Object & Array
+
+\\ Get elements in array
+>> Get all elements in array
+    var array = ['Js', 'PHP', 'Python'];
+
+    var [a, b, c] = array 
+    console.log(a, b, c); => get all elements in array
+
+>> Just get first & last elements in array
+
+    var array = ['Js', 'PHP', 'Python'];
+
+    var [a, , c] = array;
+    console.log(a, c); => get two elements
+
+# Rest parameters ( Lấy ra những phần còn lại )
+> ...rest : Rest parameter
+
+    var arrays = ['JS', 'Python', 'PHP'];
+\\ rest is a variable name
+    var [a, ...rest] = arrays; 
+>> Just get JS element
+    console.log(a); => get JS
+>> Get the remaining two elements
+    console.log(rest); => get the remaining two elements / return array
+
+> Lấy ra 1 value không được định nghĩa
+    var listCourses = {
+    name: 'Javascript',
+    price: 1000,
+    };
+
+    var [name, description = 'default value'];
+    console.log(description);
+
+> Sử dụng toán tử Rest trên tham số thì nó sẽ thành một Array
+    function logger(...params){
+        console.log(params);
+    }
+
+    console.log(logger(1,2,3,4,5,6,7,8));

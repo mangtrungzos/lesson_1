@@ -168,3 +168,50 @@ const courses = {
     [fieldPrice]: 1000
 };
 console.log(courses);
+
+// -------------------------- Destructuring -----------------------------
+
+var array = ['Js', 'PHP', 'Ruby'];
+
+var [a, b, c] = array;
+
+console.log(a, b, c);
+
+// -------------------------- Rest -------------------------------
+
+var arrays = ['JS', 'Python', 'PHP'];
+
+var [a, ...rest] = arrays;
+console.log(a);
+console.log(rest); // Return array
+
+// Example Use with Object
+
+var listCourse = {
+    name: 'Javascript',
+    price: 1000,
+    image: 'image-address'
+};
+
+var {name, price, ...rest} = listCourse;
+console.log(name, price);
+console.log(rest);
+
+// How to delete a key in an object
+
+var listCourses = {
+    name: 'Javascript',
+    price: 1000,
+    image: 'image-address',
+    children: {
+        name: 'ReactJS'
+    }
+};
+
+var {name: parentName, children:{ name },  descritpions = 'default value', ...newObject} = listCourses; // newObject is a variable name
+// In this time, the "name" has the name "parentName"
+console.log(newObject);
+
+console.log(name); // get name of the children object
+
+console.log(descritpions);
