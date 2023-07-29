@@ -59,6 +59,7 @@
 >>> function(): để chạy 1 function sẽ phải sử dụng toán tử call()
 >>> Object Sử dụng để lưu hầu hết các giá trị trong Javascript
 >>> Object sử dụng để định nghĩa key
+>>> key của object bị trùng thì nó sẽ lấy key được định nghĩa sau / Hàm cũng tượng tự
 >>> Khi cần định nghĩa 1 danh sách thì dung Array (Array cũng là 1 phần thuộc Object) 
 
 # Toán tử

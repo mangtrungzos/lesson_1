@@ -100,8 +100,18 @@ if (...) {
     var [a, , c] = array;
     console.log(a, c); => get two elements
 
-# Rest parameters ( Lấy ra những phần còn lại )
-> ...rest : Rest parameter
+# Rest parameters (...) ( Lấy ra những phần còn lại )
+> syntax: ...rest : Rest parameter
+
+> Sử dụng với Destructoring
+
+> Sử dụng trong việc định nghĩa ra tham số
+EX:
+    var array = [];
+    function logger(...rest) {
+
+    }
+    logger(...array);
 
     var arrays = ['JS', 'Python', 'PHP'];
 \\ rest is a variable name
@@ -126,3 +136,15 @@ if (...) {
     }
 
     console.log(logger(1,2,3,4,5,6,7,8));
+
+# Spread (...) (toán tử giải)
+> giải -> bỏ đi dấu ngoặc trước array & object
+
+> sử dụng khi gọi đến hàm và truyền đối số
+
+> Khi giải trong 1 array hay 1 object khác thì đó là spread
+EX:
+  function logger(){
+
+  }
+  logger(...array);

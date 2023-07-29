@@ -215,3 +215,67 @@ console.log(newObject);
 console.log(name); // get name of the children object
 
 console.log(descritpions);
+
+function loggers(a,...params) { 
+    console.log(params); // Lấy ra những phần còn lại
+}
+
+loggers(1,2,3,4);
+
+function logger1({ name, price, ...rest }){
+    console.log(name);
+    console.log(price);
+    console.log(rest);
+}
+
+logger1({
+    name: 'JS',
+    price: '2000$',
+    descritpion: 'Content'
+});
+// ---------------------------- Spread ----------------------------
+
+// In case array concatenation
+var array1 = ['Javascript', 'Ruby', 'PHP'];
+var array2 = ['ReactJS', 'Dart'];
+
+var array3 = [...array2, ...array1];
+
+console.log(array3);
+
+//
+var object1 = {
+    name: 'Javascript'
+};
+
+var object2 = {
+    price: '2000$'
+};
+
+var object3 = {...object1, ...object2};
+console.log(object3);
+
+//
+var defaultConfig = {
+    api: 'https://domain-trang-khoa-hoc',
+    apiVersion: 'v1',
+    other: 'other'
+};
+
+var exerciseConfig = {
+    ...defaultConfig,
+    api: 'https://domain-trang-bai-tap' // Khi có 2 key trùng nhau thì sẽ lấy key được định nghĩa sau(bị overwrite / ghi đè)
+};
+
+console.log(exerciseConfig);
+
+//
+var array4 = ['Js', 'PHP', 'Ruby', 'ReactJS'];
+
+function logger2(...rest){
+    for(var i = 0; i < rest.length; i++) {
+        console.log(rest[i]);
+    }
+}
+
+logger2(...array);
