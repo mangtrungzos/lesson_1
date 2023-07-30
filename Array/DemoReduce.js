@@ -38,7 +38,7 @@ Array.prototype.reduce1 = function(callback, result){
 
 const numBers = [1, 2, 3, 4, 5];
 
-const results = numbers.reduce1((total, number, index, array) => { 
+const results = numBers.reduce1((total, number, index, array) => { 
     console.log(total, number, index, array);
     return total + number;
 }, /*10*/)

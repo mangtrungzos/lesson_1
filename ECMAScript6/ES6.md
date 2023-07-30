@@ -148,3 +148,18 @@ EX:
 
   }
   logger(...array);
+
+# Tagged template literals
+\\ parameter: tham số
+\\ passed: được truyền
+\\ Biến nội suy : ${}
+
+> Tham số đầu tiên được truyền vào là phần nội dung trong hightlight và k chứa biến ${}
+function hightlight(...rest) { 
+    console.log(rest);
+}
+
+var brand = 'F8';
+var course1 = 'Java'
+
+hightlight`Học lập trình ${course1} tại ${brand}`; 

@@ -173,10 +173,14 @@ console.log(courses);
 
 var array = ['Js', 'PHP', 'Ruby'];
 
-var [a, b, c] = array;
+var [a,b,c] = array;
 
 console.log(a, b, c);
 
+//
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
 // -------------------------- Rest -------------------------------
 
 var arrays = ['JS', 'Python', 'PHP'];
@@ -279,3 +283,18 @@ function logger2(...rest){
 }
 
 logger2(...array);
+
+// --------------------------- Tagged template literals------------------
+function hightlight([first, ...strings], ...values) { // The first parameter is passed to hightlight is content and not the variable (${course1},${brand})
+    return values.reduce(
+        (acc, curr) => [...acc, `<span>${curr}</span>`, strings.shift()], 
+        [first] // initial value
+    )
+    .join('');
+}
+
+var brand = 'F8';
+var course1 = 'Java'
+
+const html = hightlight`Học lập trình ${course1} tại ${brand}!`; 
+console.log(html);
