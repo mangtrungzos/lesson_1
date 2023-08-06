@@ -220,11 +220,11 @@ console.log(name); // get name of the children object
 
 console.log(descritpions);
 
-function loggers(a,...params) { 
+function loggers1(a,...params) { 
     console.log(params); // Lấy ra những phần còn lại
 }
 
-loggers(1,2,3,4);
+loggers1(1,2,3,4);
 
 function logger1({ name, price, ...rest }){
     console.log(name);
@@ -298,3 +298,4 @@ var course1 = 'Java'
 
 const html = hightlight`Học lập trình ${course1} tại ${brand}!`; 
 console.log(html);
+

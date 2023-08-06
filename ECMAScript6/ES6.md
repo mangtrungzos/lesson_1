@@ -163,3 +163,17 @@ var brand = 'F8';
 var course1 = 'Java'
 
 hightlight`Học lập trình ${course1} tại ${brand}`; 
+
+# Module: import/ export 
+\\ Là tư tưởng bóc tách ra một thành phần xử lí một nghiệp vụ cụ thể ra 1 nơi riêng `Thường sẽ tách ra thành những file và tập hợp file`
+
+\\ Một module chỉ export default được 1 lần
+
+> import logger from './logger.js';  
+\\ `import` thẳng tên như này là đang `import` cái `module export default`
+
+> import {} from './constants.js';
+\\ `import` không phải `export default`
+
+>import * as constants from './constants.js';
+\\ `*` lấy ra tất cả export nhỏ `as` sang 1 `alias constants` thành một `object`
