@@ -169,6 +169,20 @@ const courses = {
 };
 console.log(courses);
 
+
+
+const sales = "Toyota";
+
+function carTypes(name) {
+  return name === "Honda" ? name : `Sorry, we don't sell ${name}.`;
+}
+
+const car = { myCar: "Saturn", getCar: carTypes("Honda"), special: sales };
+
+console.log(car.myCar); // Saturn
+console.log(car.getCar); // Honda
+console.log(car.special); // Toyota
+
 // -------------------------- Destructuring -----------------------------
 
 var array = ['Js', 'PHP', 'Ruby'];
@@ -299,3 +313,46 @@ var course1 = 'Java'
 const html = hightlight`Học lập trình ${course1} tại ${brand}!`; 
 console.log(html);
 
+// ---------------------------- Optional chaining (?.) --------------------
+
+const obj = {
+    names: 'Alice',
+    cat: {
+      names: 'Dinah',
+      cat2: {
+        names: 'Dinah2',
+        cat3: {
+            names: 'Dinah3'
+        }
+      }
+    }
+};
+if(obj.cat.cat2?.cat3){
+    console.log(obj.cat.names);// Truy cap vao thuoc tinh cua obj
+}
+
+const obj1 = {
+    getName(value) {
+        console.log(value)
+    }
+}
+
+obj1.getName(123);
+
+
+
+function printCustomerCity(customer) {
+    // Nếu đối tượng customer không có city -> return Unknown city
+    const customerCity = customer?.city ?? "Unknown city"; // ?? Toán tử kết hợp
+    console.log(customerCity);
+  }
+  
+  printCustomerCity({
+    name: "Nathan",
+    city: "Paris",
+  }); // "Paris"
+  printCustomerCity({
+    name: "Carl",
+    details: { age: 82 },
+  }); // "Unknown city"
+  

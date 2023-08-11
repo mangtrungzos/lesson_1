@@ -177,3 +177,39 @@ hightlight`Học lập trình ${course1} tại ${brand}`;
 
 >import * as constants from './constants.js';
 \\ `*` lấy ra tất cả export nhỏ `as` sang 1 `alias constants` thành một `object`
+
+# Optional chaining (?.)
+\\ Khi chúng ta nghi ngờ 1 key của obj không tồn tại thì sẽ thêm vào `?.`
+const obj = {
+    names: 'Alice',
+    cat: {
+      names: 'Dinah',
+      cat2: {
+        names: 'Dinah2',
+        cat3: {
+            names: 'Dinah3'
+        }
+      }
+    }
+};
+if(obj.cat.cat2?.cat3){
+    console.log(obj.cat.names);// Truy cap vao thuoc tinh cua obj
+}
+
+> with Obj
+
+obj[cat]?.[cat2] \\ `Nghi ngờ cat2 không tồn tại`
+
+> with arr
+
+obj.arr?.[index] \\ `Nghi ngờ arr không tồn tại index`
+
+> with func
+
+const obj = {
+    // getName(value) {
+    // console.log(value);
+    // }
+}
+
+obj.getName?.(123)
