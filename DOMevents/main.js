@@ -37,6 +37,11 @@ for (var i = 0; i < h2Elements.length; ++i){
 //     console.log(e.target);
 // }
 
+// Arrow func
+// h2Element.onclick = (e) => {
+//    console.log(e.target);
+// }
+
 // target trả lại chính element đang lắng nghe DOM events
 
 
