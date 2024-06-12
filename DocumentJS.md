@@ -893,3 +893,14 @@ promise
     - Update: Chỉnh sửa -> PUT / PATCH
     - Delete: Xóa -> DELETE
 \\ Postman:
+
+
+# Form Validation
+\\ The way get value 
+    Ex: 
+    console.log(inputElement.value)
+
+## trim()
+\\ Remove all spaces in context when typing.
+    Ex: 
+    return value.trim() ? undefined : 'Please type'
