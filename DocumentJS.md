@@ -625,8 +625,8 @@ EX:
 >> getElementsByTagName() : Không trả về trực tiếp element / Return HTML Collection
 >> querySelectorAll() : Không trả về trực tiếp element | Trả về là 1 node list (1 vài trường hợp dùng vòng lặp)
 --------------------
->Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
-
+> Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
+> Nodelist không có phương thức của Array như: reduce(), map()
 \\ forEach chỉ có ở nodeList
 
 - document.links: trả về 1 HTML collection
@@ -760,6 +760,8 @@ var headingElement = document.querySelector('h1');
 ## Two methods of DOM events (main.js)
 \\ 1. preventDefault
 - Dùng để loại bỏ hành vi mặc định của trình duyệt trên thẻ HTML
+    Ex:
+        e.preventDefault();
 
 \\ 2. stopPropagation
 - Loại bỏ được sự kiện nổi bọt
@@ -904,3 +906,55 @@ promise
 \\ Remove all spaces in context when typing.
     Ex: 
     return value.trim() ? undefined : 'Please type'
+
+# Syntax Array - Cú pháp kiểm tra mảng (Validator.js)
+\\ Array.isArray(...)
+    Ex:
+        if (Array.isArray(selectorRules[rule.selector])) {
+            selectorRules[rule.selector].push[rule.test];
+        } else {
+            selectorRules[rule.selector] = [rule.test];
+        }
+
+# Convert 1 biến thành dạng boolean
+\\ !! boolean
+
+    Ex:
+        return !!errorMessage;
+
+# Convert Nodelist to array
+\\ Array.from()
+    Ex: 
+        var formValues = Array.from(enableInputs);
+        
+# Toán tử logic và Câu lệnh điều kiện 
+
+    var enableInput = formElement.querySelectorAll('[name]');
+    var formValues = Array.from(enableInput).reduce((values, input) => {
+        return (values[input.name] = input.value) && values;
+    }, {});
+
+    Ex: 
+        Giả sử chúng ta có mảng enableInput chứa hai đối tượng input:
+        var enableInput = [
+            { name: "username", value: "JohnDoe" },
+            { name: "email", value: "john@example.com" }
+        ];
+
+        Lần lặp đầu tiên:
+            input: { name: "username", value: "JohnDoe" }
+            values: {}
+            Thực hiện: values["username"] = "JohnDoe"
+            Giá trị trả về: values trở thành { username: "JohnDoe" }
+
+        Lần lặp thứ hai:
+            input: { name: "email", value: "john@example.com" }
+            values: { username: "JohnDoe" }
+            Thực hiện: values["email"] = "john@example.com"
+            Giá trị trả về: values trở thành { username: "JohnDoe", email: "john@example.com" }
+        
+        Results:
+            {
+                username: "JohnDoe",
+                email: "john@example.com"
+            }
