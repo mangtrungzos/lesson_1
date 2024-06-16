@@ -1,11 +1,22 @@
 function Validator(options) {
 
+    function getParent(element, selector) {
+        // Lặp qua thẻ cha parentElement (.from-group)
+        while (element.parentElement) {
+            if (element.parentElement.matches(selector)) {
+                return element.parentElement;
+            }
+            element = element.parentElement;
+        }
+    }
+
     var selectorRules = {};
 
     // Func practice validate
     function validate(inputElement, rule) {
+
+        var errorElement = getParent(inputElement, options.fromGroupSelector).querySelector(options.errorSelector);
         var errorMessage;
-        var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
         
         // Lấy ra các rules của selector
         var rules = selectorRules[rule.selector];
@@ -13,6 +24,14 @@ function Validator(options) {
         // Lặp qua từng rule & kiểm tra
         // Nếu có lỗi thì dừng việc kiểm tra
         for (var i = 0; i < rules.length; i++) {
+            switch (inputElement.type) {
+                case 'radio':
+                case 'checkbox':
+                    errorMessage = rules[i](inputElement.value);
+                    break;
+                default: 
+                    errorMessage = rules[i](inputElement.value);
+            }
             var errorMessage = rules[i](inputElement.value);
             // Khi có lỗi thoát khỏi vòng lặp
             if (errorMessage) break;
@@ -22,10 +41,10 @@ function Validator(options) {
 
         if (errorMessage) {
             errorElement.innerText = errorMessage;
-            inputElement.parentElement.classList.add('invalid');
+            getParent(inputElement, options.fromGroupSelector).classList.add('invalid');
         } else {
             errorElement.innerText = '';
-            inputElement.parentElement.classList.remove('invalid');
+            getParent(inputElement, options.fromGroupSelector).classList.remove('invalid');
         }
 
         return !errorMessage;
@@ -58,9 +77,8 @@ function Validator(options) {
                         // Sau đó sẽ return ra kq cuối cùng là values 
                         // Khi viết && parameter thì nó sẽ return lại cái cuối cùng trong case này
                         // 1. Gán input.value cho object values / Cuối cùng return ra values
-                        
-                        // 
-                        return (values[input.name] = input.value) && values;
+                        values[input.name] = input.value;
+                        return values;
                     }, {});
 
                     options.onSubmit(formValues);
@@ -98,9 +116,9 @@ function Validator(options) {
 
                 // Handle every time user type input
                 inputElement.oninput = () => {
-                    var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+                    var errorElement = getParent(inputElement, options.fromGroupSelector).querySelector(options.errorSelector);
                     errorElement.innerText = '';
-                    inputElement.parentElement.classList.add('invalid');
+                    getParent(inputElement, options.fromGroupSelector).classList.add('invalid');
                 }
             }
         });
@@ -156,13 +174,15 @@ Validator.isConfirmed = (selector, getConfirmValue, message) => {
 Validator({
     form: '#form-1',
     errorSelector: '.form-message',
+    fromGroupSelector: '.form-group',
     rules: [
         // two function isRequired / isEmail
         Validator.isRequired('#fullname', 'Please enter your full name'),
         Validator.isRequired('#email'),
         // Validator.isEmail('#email', 'Please enter your email'),
         Validator.minLength('#password', 6),
-        // Validator.isRequired('#password_confirmation'), 
+        Validator.isRequired('#password_confirmation'), 
+        Validator.isRequired('input[name="gender"]'), 
         Validator.isConfirmed('#password_confirmation', function() {
             return document.querySelector('#form-1 #password').value;
         }, 'Type password again is not correct'),
