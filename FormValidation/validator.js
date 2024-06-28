@@ -26,13 +26,18 @@ function Validator(options) {
         for (var i = 0; i < rules.length; i++) {
             switch (inputElement.type) {
                 case 'radio':
+                    errorMessage = rules[i](
+                        formElement.querySelector(rule.selector + ':checked')
+                    );
+                    break;
                 case 'checkbox':
-                    errorMessage = rules[i](inputElement.value);
+                    errorMessage = rules[i](
+                        formElement.querySelector(rule.selector + ':checked')
+                    );
                     break;
                 default: 
                     errorMessage = rules[i](inputElement.value);
             }
-            var errorMessage = rules[i](inputElement.value);
             // Khi có lỗi thoát khỏi vòng lặp
             if (errorMessage) break;
         }
@@ -77,7 +82,35 @@ function Validator(options) {
                         // Sau đó sẽ return ra kq cuối cùng là values 
                         // Khi viết && parameter thì nó sẽ return lại cái cuối cùng trong case này
                         // 1. Gán input.value cho object values / Cuối cùng return ra values
-                        values[input.name] = input.value;
+                        
+                        switch(input.type) {
+                            case 'radio':
+                                if (input.checked) {
+                                    values[input.name] = input.value;
+                                }
+
+                                if (!values[input.name]) {
+                                    values[input.name] = ''
+                                }
+                                break;
+                            case 'checkbox':
+                                if(input.checked){
+                                    if(Array.isArray(values[input.name])){
+                                        values[input.name].push(input.value)
+                                    } else {
+                                        values[input.name] = [input.value]
+                                    }
+                                } 
+                                if(!values[input.name]){
+                                    values[input.name] = ''
+                                }
+                                break;
+                            case 'file':
+                                values[input.name] = input.files;
+                                break;
+                            default:
+                                values[input.name] = input.value;
+                        }
                         return values;
                     }, {});
 
@@ -104,23 +137,18 @@ function Validator(options) {
             }
 
             // selectorRules[rule.selector] = rule.test;
-            var inputElement = formElement.querySelector(rule.selector);
-            
-            if (inputElement) {
-                // Handle blur case
+            var inputElements = formElement.querySelectorAll(rule.selector);
+            Array.from(inputElements).forEach(function (inputElement) {
                 inputElement.onblur = () => {
-                    // value: inputElement.value
-                    // test func: rule.test
                     validate(inputElement, rule);
                 }
-
                 // Handle every time user type input
                 inputElement.oninput = () => {
                     var errorElement = getParent(inputElement, options.fromGroupSelector).querySelector(options.errorSelector);
                     errorElement.innerText = '';
                     getParent(inputElement, options.fromGroupSelector).classList.add('invalid');
                 }
-            }
+            });
         });
     }
 }
@@ -134,7 +162,7 @@ Validator.isRequired = (selector, message) => {
     return {
         selector: selector,
         test: (value) => {
-            return value.trim() ? undefined : message || 'Please type'
+            return value ? undefined : message || 'Please type';
         }
     };
 }
@@ -182,7 +210,9 @@ Validator({
         // Validator.isEmail('#email', 'Please enter your email'),
         Validator.minLength('#password', 6),
         Validator.isRequired('#password_confirmation'), 
+        Validator.isRequired('#file'), 
         Validator.isRequired('input[name="gender"]'), 
+        Validator.isRequired('#province'), 
         Validator.isConfirmed('#password_confirmation', function() {
             return document.querySelector('#form-1 #password').value;
         }, 'Type password again is not correct'),

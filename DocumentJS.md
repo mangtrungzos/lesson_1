@@ -603,6 +603,11 @@ EX:
 > ID, class, tag, CSS selector, HTML collection
 \\ Khi select 1 elements mà trả về null là do viết sai heading id hoặc đặt trùng tên id -> nên các elements sau k lấy được -> return null
 
+\\ CSS selector input tag 
+    Ex: 
+        input[name="gender"];
+        input[type="text"];
+
 > Muốn truy cập vào từng elements trong HTML collection phải dùng vòng lặp
 >> HTML collection tính chất giống mảng (khác ở chỗ không có các methods the same of array)
 
@@ -626,8 +631,7 @@ EX:
 >> querySelectorAll() : Không trả về trực tiếp element | Trả về là 1 node list (1 vài trường hợp dùng vòng lặp)
 --------------------
 > Nodelist and HTML collection có tính chất giống mảng nên có thể sử dụng vòng lặp để lấy ra element
-> Nodelist không có phương thức của Array như: reduce(), map()
-\\ forEach chỉ có ở nodeList
+> Nodelist không có phương thức của Array như: reduce(), map(), forEach()
 
 - document.links: trả về 1 HTML collection
 ## document.write
@@ -929,6 +933,7 @@ promise
         
 # Toán tử logic và Câu lệnh điều kiện 
 
+# Fix bug project FormValidation - Checked
     var enableInput = formElement.querySelectorAll('[name]');
     var formValues = Array.from(enableInput).reduce((values, input) => {
         return (values[input.name] = input.value) && values;
@@ -958,3 +963,55 @@ promise
                 username: "JohnDoe",
                 email: "john@example.com"
             }
+
+// fix bug checkbox (checkbox sau khi thêm 
+    if(!input.checked){
+        values[input.name] = '' 
+    } thì data sẽ trả về rỗng nếu các bạn không chọn option cuối cùng):   case 'checkbox':
+            if(!input.checked){ 
+            return values }
+                if(!values[input.name]){
+                values[input.name] = ''
+                }
+                if(!Array.isArray(values[input.name])){
+                    values[input.name] = []
+                } 
+                values[input.name].push(input.value)
+                break 
+
+/** Nguyên nhân bị bug:
+Đây là 1 vòng lặp, lặp qua 1 mảng có 3 options và sẽ dừng ở option cuối. 
+1. Khi lặp qua 2 option đầu, trình duyệt kiểm tra 2 options có được check không và
+gán thành công gía trị của option được check vào mảng.
+2. Ở lần lặp cuối, trình duyệt kiểm tra phần tử cuối có được check không. 
+ 2.1 Nếu được check: trình duyệt đã thêm tất cả các options được check vào mảng.
+ 2.2 nếu options cuối chưa được check: trình duyệt sẽ gán chuỗi rỗng vào 
+    values[input.name] (đúng theo code: if(!input.checked){
+                            values[input.name]= ''}) 
+3. Ở đây mình sẽ kiểm tra xem values[input.name] có tồn tại không, nếu đã lặp qua 3 
+options mà không có giá trị thì mình sẽ gán cho nó 1 chuỗi rỗng.
+
+// Tương tự ta có thể dùng code này để viết luôn cho phần radio
+// mà không phải get name: 
+
+case 'radio':
+            if(input.checked){
+                values[input.name] = input.value
+            }
+            if(!values[input.name]){
+                values[input.name] = ''
+            }
+            break
+// Dưới đây là cách code xuôi của phần checkbox mang tính tham khảo: 
+    case 'checkbox':
+         if(input.checked){
+                if(Array.isArray(values[input.name])){
+                    values[input.name].push(input.value)
+                } else {
+                    values[input.name] = [input.value] 
+                }
+        } 
+        if(!values[input.name]){
+            values[input.name] = ''
+        }
+        break;
