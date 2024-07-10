@@ -199,6 +199,7 @@ Validator.isConfirmed = (selector, getConfirmValue, message) => {
     };
 }
 
+// form 1
 Validator({
     form: '#form-1',
     errorSelector: '.form-message',
@@ -218,6 +219,35 @@ Validator({
         }, 'Type password again is not correct'),
     ],
     onSubmit: function(data) {
+        // Call API
+        console.log(data);
+    }
+});
+
+
+// form 2
+Validator({
+    form: '#form-2',
+    errorSelector: '.form-message',
+    fromGroupSelector: '.form-group',
+    rules: [
+        // two function isRequired / isEmail
+        Validator.isRequired('#fullname', 'Please enter your full name'),
+        Validator.isRequired('#email'),
+        // Validator.isEmail('#email', 'Please enter your email'),
+        Validator.minLength('#password', 6),
+        Validator.isRequired('#password_confirmation'), 
+        Validator.isRequired('#file'), 
+        Validator.isRequired('input[name="gender"]'), 
+        Validator.isRequired('#province'), 
+        Validator.isConfirmed('#password_confirmation', function() {
+            return document.querySelector('#form-1 #password').value;
+        }, 'Type password again is not correct'),
+    ],
+
+    // Callback - When we typed correct, it will be called this function and return data
+    onSubmit: function(data) {
+        // Call API
         console.log(data);
     }
 });
