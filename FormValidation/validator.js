@@ -171,10 +171,10 @@ Validator.isEmail = (selector, message) => {
     return {
         selector: selector,
         test: (value) => {
-            var regax = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
             // Undefined: not error / error: Please type email
-            return regax.test(value) ? undefined : message || 'Please type email';
+            return regex.test(value) ? undefined : message || 'Please type email';
         }
     };
 }

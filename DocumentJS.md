@@ -512,6 +512,8 @@ EX:
 # Câu lệnh rẽ nhánh If else - Toán tử 3 ngôi (If/else - main.js)
 \\ Note: Chỉ cần 1 điều kiện đúng thì sẽ thực hiện câu lệnh trong điều kiện đó và bỏ qua các điều kiện còn lại.
 
+Ex: return value ? undefined : 'error'
+
 > Toán tử chia hết dùng : %
 
 # Câu lệnh rẽ nhánh -  Switch (If/else - main.js)
@@ -607,6 +609,10 @@ EX:
     Ex: 
         input[name="gender"];
         input[type="text"];
+# input tag
+\\ name là attribute hợp lệ của thẻ input
+\\ Đối với những thẻ không hợp lệ trong thể input ta sẽ sử dụng 
+    getAttribute('...') -> Lấy ra thuộc tính của nó
 
 > Muốn truy cập vào từng elements trong HTML collection phải dùng vòng lặp
 >> HTML collection tính chất giống mảng (khác ở chỗ không có các methods the same of array)
@@ -1015,3 +1021,5 @@ case 'radio':
             values[input.name] = ''
         }
         break;
+
+# Phân tích cách triển khai logic
