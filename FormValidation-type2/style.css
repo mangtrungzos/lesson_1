@@ -106,3 +106,12 @@
     margin-top: 36px;
   }
   
+  .form-gender {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .gender {
+    display: flex;
+  }

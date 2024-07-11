@@ -1,6 +1,4 @@
-function Validator(formSelector, options) {
-    // assign default value for parameter 
-    if (!options) options = {};
+function Validator(formSelector) {
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -68,18 +66,31 @@ function Validator(formSelector, options) {
     }
 
     // Func handle validate
-    function handleValidate(event) {
-        var rules = formRules[event.target.name];
+    function handleValidate(e) {
+        var rules = formRules[e.target.name];
         var errorMessage;
 
-        rules.some(function (rule) {
-            errorMessage = rule(event.target.value);
+        for (var rule of rules) {
+            switch (e.target.type) {
+                case 'radio':
+                case 'checkbox':
+                    var inputChecked = formElement.querySelector(`input[name="${e.target.name}"][rules]:checked`);
+                    errorMessage = rule(inputChecked);
+                    break;
+                default: 
+                    errorMessage = rule(e.target.value);
+            }
+            if (errorMessage) break;
+        }
+
+        rules.some((rule) => {
+            errorMessage = rule(e.target.value);
             return errorMessage;
         });
 
         // If there is an error, it will be diplayed in the UI
         if (errorMessage) {
-            var formGroup = getParent(event.target, '.form-group');
+            var formGroup = getParent(e.target, '.form-group');
             
             if (formGroup) {
                 formGroup.classList.add('invalid');
@@ -95,8 +106,8 @@ function Validator(formSelector, options) {
     }
 
     // Func handle clear error
-    function handleClearError(event) {
-        var formGroup = getParent(event.target, '.form-group');
+    function handleClearError(e) {
+        var formGroup = getParent(e.target, '.form-group');
         if (formGroup.classList.contains('invalid')) {
             formGroup.classList.remove('invalid');
 
@@ -108,8 +119,8 @@ function Validator(formSelector, options) {
     }
 
     // Handle behaviour when submit
-    formElement.onsubmit = (event) => {
-        event.preventDefault();
+    formElement.onsubmit = (e) => {
+        e.preventDefault();
 
         var inputs = formElement.querySelectorAll('[name][rules]');
         var isValid = true;
@@ -122,12 +133,46 @@ function Validator(formSelector, options) {
         
         // When there is not error then submit the form
         if (isValid) {
+            if (typeof this.onSubmit === 'function') {
+                var enableInputs = formElement.querySelectorAll('[name]');
+                var formValues = Array.from(enableInputs).reduce((values, input) => {
+                    switch(input.type) {
+                        case 'radio':
+                            if (input.checked) {
+                                values[input.name] = input.value;
+                            }
+                             
+                            if (!values[input.name]) {
+                                values[input.name] = ''
+                            }
+                            break;
+                        case 'checkbox':
+                            if(input.checked){
+                                if(Array.isArray(values[input.name])){
+                                    values[input.name].push(input.value)
+                                } else {
+                                    values[input.name] = [input.value]
+                                }
+                            } 
+                            if(!values[input.name]){
+                                values[input.name] = ''
+                            }
+                            break;
+                        case 'file':
+                            values[input.name] = input.files;
+                            break;
+                        default:
+                            values[input.name] = input.value;
+                    }
+                    return values;
+                }, {});
 
-            if (typeof options.onSubmit === 'function') {
-                options.onSubmit();
+                this.onSubmit(formValues);
+
             } else {
                 formElement.submit();
             }
+
         }
     }
 }

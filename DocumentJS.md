@@ -568,6 +568,7 @@ Ex: return value ? undefined : 'error'
 > Đây là phương thức tồn tại săn trong prototype của 2 đối tượng: String, Array
 \\ Dối với chuỗi dùng kiểm tra xem trong chuỗi có chứa 1 từ gì đó không hoặc 1 cụm từ 
 
+\\ Không có trong string (trong trình duyệt cũ)
 ---------------------------------------------------------
 
 # Callback
