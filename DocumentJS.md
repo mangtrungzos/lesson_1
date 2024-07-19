@@ -810,6 +810,14 @@ var headingElement = document.querySelector('h1');
 \\ Encode / decode  
 \\ Stringify: Từ JavaScript types -> JSON
 \\ Parse: Từ JSON -> JavaSript types
+\\ JSON.stringify() -> Convert 1 object into a JSON string
+\\ ex. var obj = {
+            name: "Alice",
+            age: 20,
+            hobbies: ["reading", "writing"]
+        };
+        var json = JSON.stringify(obj);
+        console.log(json) // {"name":"Alice","age":20,"hobbies":["reading","writing"]}
 
 > Thể hiện kiểu dữ liệu dạng chuỗi dùng : "" 
 
