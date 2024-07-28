@@ -387,28 +387,40 @@ writeLog('text message');
 > forEach không có return
 > Khi xây dựng forEach dùng for in
 >> Sử dụng để duyệt qua được phần tử của mảng
+\\ let numbers = [1, 2, 3, 4, 5];
+\\ numbers.forEach(num => console.log(num * 2)); // Output: 2, 4, 6, 8, 10
+
     every()
 > Kiểm tra tất cả elements trong mảng / tất cả các elements phải thỏa mãn điều kiện đưa ra thì mới return true
 > Khi gặp 1 elements false thì sẽ dùng vòng lặp tại thời điểm đó
 >> Áp dụng cho Exercise kiểm tra các phần tử thuộc mảng phải thỏa mãn 1 điều kiện nào đó
 >> Kết quả trả về: boolean giúp kiểm trả đúng sai
+
     some()
 > Kiểm tra tối thiểu 1 phần tử trong mảng có thuộc điều kiện không
 > Chỉ cần 1 phần tử trong mảng thoa mãn điều kiện thì sẽ trả về true và ngừng lại vòng lặp / sự kiểm tra khi gặp kết quả đúng
+
     find()
 > Tìm kiếm trong Array phần tử cần tìm, nếu có thì find method sẽ trả về đúng phần tử đó
 > Sẽ trả về chính elements thỏa mãn điều kiện đầu tiên tìm được
 > Thực hiện cho đến khi có giá trị đầu tiên thỏa mãn và trả về true
 > Nếu không có => undefined
+
     filter()
 > Giống find() / nhưng sẽ trả về tất cả phần tử thỏa mãn điều kiện
-> Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach 
+> Khác find() ở điểm là sẽ tìm kiếm qua 1 danh sach
+
     map()
 > Cho phép lặp qua các phần tử của mảng
 > Duyệt qua 1 mảng
 > Cho phép xử lí giá trị của mảng đó và trả về 1 mảng mới
 > Sử dụng khi muốn chỉnh sửa hay thay đổi những elements của 1 array
 > originArray: trả về array gốc
+\\ let numbers = [1, 2, 3, 4, 5];
+\\ let doubled = numbers.map(num => num * 2);
+\\ console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+
     reduce()
 > Muốn nhận về 1 giá trị duy nhất sau khi tính toán, xử lý 1 Arr
 > Truyền vào 2 đối số: hàm trả về và giá trị khởi tạo / Tùy vào bài toán mà giá trị khởi tạo sẽ khác nhau
