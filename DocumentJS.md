@@ -70,14 +70,19 @@
 
 ## Toán tử số học
  + -> cộng
+   \\ ex. '4' + 5 * 6 -> '4' + 30 = '430' : Thực hiện phép nối chuỗi (JavaScript sẽ chuyển số thành chuỗi và thực hiện phép nối chuỗi.)
  - -> trừ
+   \\ Sẽ cố gắng chuyển đổi các toán hạng của nó thành số trước khi thực hiện phép trừ
+   \\ ex. '4' - '5' + 6 = 4 - 5 (-1) + 6 = 5
  * -> nhân
+   \\ Trong JS toán tử '*' sẽ chuyển đổi các toán hạng thành số trước khi thực hiện phép nhân
+   \\ ex. '4' * 5 -> Convert chuỗi '4' thành Number 4 * 5 = 20
  ** -> lũy thừa
  / -> chia
  % -> chia lấy số dư
  ++ -> tăng 1 giá trị số
  -- -> giảm 1 giá trị số
-
+- Nhân chia được ưu tiên trước
 ## Toán Tử gán
  Toán tử       Ví dụ          Tương đương
  =             x = y          x = y
@@ -116,9 +121,13 @@
 ## Toán tử so sánh - P2
 === : bằng
 !== : không bằng
+== : nó sẽ cố gắng chuyển đổi các toán hạng về cùng kiểu trước khi so sánh.
 
 > Notes: === so sánh cả data type, cả kiểu dữ liệu (so sánh tuyệt đối)
 > Note: !== so sánh tuyệt đối 
+
+\\ NaN == NaN : false / NaN là một giá trị không xác định do các phép toán không hợp lệ
+\\ NaN === NaN : false 
 
 
 ## Boolean
@@ -370,6 +379,8 @@ writeLog('text message');
  > Sử dụng để cắt 1 vài elements của mảng
 
 ## Các phương thức trong mảng (main_1.js)
+\\ Sort() : Sử dụng để sắp xếp các phần tử của một mảng tại chỗ và trả về mảng đã được sắp xếp.
+\\ ex. const arr = ['z', 'b', 'd', 'a', 'e']; arr.sort() => [ 'a', 'b', 'd', 'e', 'z' ]
 > Array methods
 
     forEach()
