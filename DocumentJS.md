@@ -4,7 +4,7 @@
 - Viết code có dấu ';' có thể viết được trên cùng 1 dòng
 - variable: biến
 1. alert : tại 1 thời điểm thì chỉ hiển thị 1 biến mà thôi
-
+Note: Trong Javascript thì mỗi hàm sẽ tạo ra phạm vi riêng của nó
 # Một số hàm built-in (built-in function)
     1. Alert : Tạo ra 1 bảng  thông báo
     2. Console : đối tượng phương thức 
