@@ -582,6 +582,7 @@ Ex: return value ? undefined : 'error'
 # Vòng lặp lồng nhau (Nested loop)
 
 # Đệ quy
+\\ Đệ quy là một hàm sẽ gọi lại chính hàm đó
 \\ Đặc tính của đối tượng Set là những element của nó là unique chỉ tồn tại 1 mà thôi
 > Lỗi trong đệ quy
 \\ Maximum call stack size exceeded
